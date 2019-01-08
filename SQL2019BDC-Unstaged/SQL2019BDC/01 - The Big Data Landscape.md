@@ -1,0 +1,497 @@
+![](../graphics/microsoftlogo.png)
+
+# Workshop: Microsoft SQL Server Big Data Clusters Architecture
+
+#### <i>A Microsoft Course from the SQL Server team</i>
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h1>The Big Data Landscape</h1>
+
+In this workshop you'll cover using a Process and and various Platform components to create a SQL Server Big Data Cluster solution you can deploy on premises, in the cloud, or in a hybrid architecture. In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic. There's a lot here - so focus on understanding the overall system first, then come back anbd explore each section.
+
+(<a href="file:///Users/bwoody/Documents/OneDrive%20-%20Microsoft/workshops/workshops/SQL-SQL2019-BDC/SQL2019BDC/00%20-%20Pre-Requisites.md" target="_blank">Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.)
+
+You'll cover these topics in the Workshop:
+<dl>
+
+  <dt><a href="SQL2019BDC/01%20-%20The%20Big%20Data%20Landscape.md" target="_blank">01 - The Big Data Landscape<dt>
+  <dt><a href="SQL2019BDC/02%20-%20SQL%20Server%20BDC%20Components.md" target="_blank">02 - SQL Server BDC Components</a></dt>
+  <dt><a href="SQL2019BDC/03%20-%20Planning,%20Installation%20and%20Configuration.md" target="_blank">03 - Planning, Installation and Configuration</a></dt>
+  <dt><a href="SQL2019BDC/04%20-%20Operationalization.md" target="_blank">04 - Operationalization</a></dt>
+  <dt><a href="SQL2019BDC/05%20-%20Management%20and%20Monitoring.md" target="_blank">05 - Management and <br> Monitoring</a></dt>
+  <dt><a href="SQL2019BDC/06%20-%20Security.md" target="_blank">06 - Security</a></dt>
+
+</dl>
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.1 Business Applications and Big Data</h2>
+
+Businesses require near real-time insights from ever-larger sets of data. Large-scale data ingestion requires scale-out storage and processing in ways that allow fast response times. In addition to simply querying this data, organizations want full analysis and even predictive capabilities over their data. A few industry examples of applications of technology that create large data sets are:
+
+ <table style="tr:nth-child(even) {background-color: #f2f2f2;}; text-align: left; display: table; border-collapse: collapse; border-spacing: 2px; border-color: gray;">
+
+  <tr><th style="background-color: #1b20a1; color: white;">Industry Sector</th> <th style="background-color: #1b20a1; color: white;">Primary Use-Cases</th></tr>
+
+  <tr><td><b>Retail</b></td><td><a href="https://www.cardinalpath.com/forecasting-with-machine-learning-techniques/" target="_blank">Demand prediction</a></td></tr>
+  <tr><td></td><td><a href="https://www.ipsos-retailperformance.com/resources/blog/beginners-guide-store-analytics-retailers/" target="blank">In-store analytics</a></td></tr>
+  <tr><td></td><td><a href="https://www.cleverism.com/how-to-optimize-supply-chain-management-big-data/"  target="blank">Supply chain optimization</a></td></tr>
+  <tr><td></td><td>Customer retention</td></tr>
+  <tr><td></td><td>Cost/Revenue analytics</td></tr>
+  <tr><td></td><td>HR analytics</td></tr>
+  <tr><td></td><td>Inventory control</td></tr>
+  <tr><td><b>Finance</b></td><td><a href="https://cloudblogs.microsoft.com/microsoftsecure/2018/12/03/analysis-of-cyberattack-on-u-s-think-tanks-non-profits-public-sector-by-unidentified-attackers/?wt.mc_id=AID730391_QSG_SCL_304569&ocid=AID730391_QSG_SCL_304569&utm_source=t.co&utm_medium=referral" target="_blank">Cyberattack Prevention</a></td></tr>
+  <tr><td></td><td>Fraud detection</td></tr>
+  <tr><td></td><td>Customer segmentation</td></tr>
+  <tr><td></td><td>Market analysis</td></tr>
+  <tr><td></td><td>Risk analysis</td></tr>
+  <tr><td></td><td>Blockchain</td></tr>
+  <tr><td></td><td>Customer retention</td></tr>
+  <tr><td><b>Healthcare</b></td><td>Fiscal control analytics</td></tr>
+  <tr><td></td><td>Disease Prevention prediction and classification</td></tr>
+  <tr><td></td><td>Clinical Trials optimization</td></tr>
+  <tr><td></td><td>Patient load analysis</td></tr>
+  <tr><td></td><td>Episode analytics</td></tr>
+  <tr><td><b>Public Sector</b></td><td>Revenue prediction</td></tr>
+  <tr><td></td><td>Education effectiveness analysis</td></tr>
+  <tr><td></td><td>Transportation analysis and prediction</td></tr>
+  <tr><td></td><td>Energy demand and supply prediction and control</td></tr>
+  <tr><td></td><td>Defense readiness predictions and threat analysis</td></tr>
+  <tr><td><b>Manufacturing</b></td><td>Predictive Maintenance (PdM)</td></tr>
+  <tr><td></td><td>Anomaly Detection</td></tr>
+  <tr><td></td><td>Pattern analysis</td></tr>
+  <tr><td><b>Agriculture</b></td><td>Food Safety analysis</td></tr>
+  <tr><td></td><td>Crop forecasting</td></tr>
+  <tr><td></td><td>Market forecasting</td></tr>
+  <tr><td></td><td>Pipeline Optimization</td></tr>
+
+</table>
+
+While solutions for large-scale data processing exist, they are often batch-based, which has a lag in the time from query to response. Also, batch systems <a hrefr="https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html" target="_blank">such as Hadoop </a>are complicated to set up and manage. Operational data is often stored in Relational Database systems on-premises, and joining that data to larger-scale cloud systems exposes security weaknesses and brittle architectures.
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Define Your Use-Case</b></p>
+
+In this activity, you will define the use-case that best fits the industry where you work.
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+
+While you will review the design for a complete solution in this workshop, it extrapolates to many other scenarios. You need to find the top scenarios specific your industry.
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Open a web browser and any professional notes or resources you use at work.</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Spend 5 minutes looking online for the terms "Big Data" and "Machine Learning" and "Top" for your industry. For example:  <b>Hospital Big Data Machine Learning Top</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Record your findings in your personal workshop notes.</p>
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2>1.2 Workshop Solution</h2>
+
+This solution uses an example of a retail organization that has multiple data sources, but it has many applications to the otherindustries listed above. It serves as an end-to-end scenario where you will learn the technologies and processes you can use to create multiple solutions. 
+
+<img style="height: 50;" src="../graphics/WWI-logo.png">
+
+[Wide World Importers](https://azure-scenarios-experience.azurewebsites.net/big-data.html) (WWI) is a traditional brick and mortar business with a long track record of success, generating profits through strong retail store sales of their unique offering of affordable products from around the world. They have a great training program for new employees, that focuses on connecting with their customers and providing great face-to-face customer service. This strong focus on customer relationships has helped set WWI apart from their competitors. 
+
+WWI has now added web and mobile commerce to their platform, which has generated a significant amount of additional data, and data formats. These new platforms were added without integrating into the OLTP system data or Business Intelligence infrastructures. As a result, "silos" of data stores have developed.
+
+<img style="height: 200; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/WWI-001.png">
+
+Now they want to expand their reach to customers around the world through web and mobile e-commerce. But they don't want to just simply make their inventory available online. They want to build upon their track record of strong customer connections, and engage with their customers through personalized, high-quality application experiences that incorporate data and intelligence.
+
+The technology team at WWI has recognized that moving to an omni-channel strategy has quickly outgrown their ability to handle data. They anticipate the following solutions needed to reach more customers and grow the business:
+
+ - Scale data systems to reach more consumers
+ - Unlock business insights from multiple sources of structured and unstructured data
+ - Apply real-time analytics for instant updates
+ - Infuse AI into apps to actively engage with customers
+
+Prior to expanding to our current omni-channel strategy, WWI had a simple Point of Sale (POS) application that handled customer orders at each retail store. The back-end was a series of service layers used to process orders and store them in a SQL database. They had designed their systems and tuned them to handle this level of data.
+
+<img style="height: 200; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/WWI-002.png">
+
+As they added new e-commerce channels to expand the customer base, consumer demand also increased. This increased demand from more customers ordering products through more channels generated more data. Now WWI has new challenges to address:
+
+ - Increased consumer demand, leading to increased app data
+ - They are unable to determine business trends because of siloed insights
+ - They have a rising data management footprint, increasing cost and complexity
+ - New development challenges resulting from more deployment targets and duplicated code
+
+<br>
+<img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/WWI-003.png">
+<br>
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h3>Solution</h3>
+
+<br>
+<img style="height: 200; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://docs.microsoft.com/en-us/sql/big-data-cluster/media/big-data-cluster-overview/ai-ml-spark.png">
+<br>
+
+Your output will look similar to this Power BI Report:
+
+<br>
+<img style="height: 200; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://azure-scenarios-experience.azurewebsites.net/media/big-data-advanced-analytics/power-bi.png">
+<br>
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Solution Review</b></p>
+
+In this activity, you will review the solution and ask pertinent questions about it's design.
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+
+Understanding the Soltuion: List design choice questions
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Review the scenario and the proposed solution.</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Based on your current knowledge in each of the technologies shown, write down any questions you have (<i>What is this technology, how is it used, why was it selected, etc.</i>) in your personal workshop notes. You will return to these questions at the end of the workshop to see if you understand the choices, and if with your new knowledge, you agree with the design.</p>
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.3 Big Data Technologies: Operating Systems</h2>
+
+In this section you will learn more about the designs of two primary operating systems (Microsoft Windows and Linux) and how they are suited to working with Big Data. 
+
+<i>NOTE: This is not meant to be a comprehensive discussion of the merits of an operating system or ecostrcuture. The goal is to understand the salient features in each architecture as they pertain to processing large sets of data.</i>
+
+When working with large-scale, distributed data processing systems, there are two primary concepts to keep in mind: You should move as much processing to the data location as possible, and the second is that the storage system should be abstracted so that the code does not have to determine where to get its data from each node. Both Windows and Linux have specific attributes to keep in mind as you select hardware, drivers, and configurations for your systems. 
+
+<h3>Storage</h3>
+
+The general rules for storage in a distributed data processing environment are that the disks should be as fast as possible, you should optimize for the best number of nodes that will store and process the data, and that the abstraction system (in the case of SQL Server BDC, this is HDFS in many casees) be at the latest version and optimized settings.
+
+For general concepts for Windows storage see the following resources:
+
+<ul>
+    <li><a href="https://social.technet.microsoft.com/wiki/contents/articles/5375.windows-file-systems.aspx?Redirected=true" target="_blank">Understand Windows File Systems</a></li>
+    <li><a href="https://docs.microsoft.com/en-us/windows-server/storage/storage" target="_blank">Microsoft primary location for Storage on Windows Server</a></li>
+    <li><a href="https://blogs.msdn.microsoft.com/clustering/2018/05/31/scale-out-file-server-improvements-in-windows-server-2019/" target="_blank">Improvements in Windows Server Storage</a></li>
+</ul>
+
+In general, Linux treats almost everything as a file system or a process. For general concepts for Linux storage see the following resources:
+
+<ul>
+    <li><a href="http://www.tldp.org/LDP/intro-linux/html/sect_03_01.html" target="_blank">Understand the Linux File System</a></li>
+    <li><a href="https://www.howtogeek.com/howto/33552/htg-explains-which-linux-file-system-should-you-choose/" target="_blank">The File System options explained</a></li>
+    <li><a href="https://www.tecmint.com/fdisk-commands-to-manage-linux-disk-partitions/" target="_blank">Working with the fdisk utility</a></li>
+</ul>
+
+<h3>Processing</h3>
+
+Both Windows and Linux (in the x86 architecture) are Symmetric Multiprocessing systems, which means that all processors are addressed as a single unit. In general, distributed processing systems should have larger, and more, processors at the "head" node. General Purpose (GP) processors are normally used in these systems, but for certain uses such as Deep Learning or Artificial Intelligence, Purpose-Built processors such as Graphics Processing Unit (GPU's) are used within the environment, and in some cases,  Advanced RISC Machines (ARM) chips can be brought into play for specific tasks. For the purposes of this workshop, you will not need these latter two technologies, although both Windows and Linux support them.
+
+<i>NOTE: Linux can be installed on chipsets other than x86 compatible systems. In this workshop, you will focus on x86 systems.</i>
+
+<ul>
+    <li><a href="https://docs.microsoft.com/en-us/windows/desktop/ProcThread/multitasking" target="_blank">Microsoft Windows and Processors</a></li>
+    <li><a href="https://www.tecmint.com/check-linux-cpu-information/" target="_blank">Getting Processor Information using Linux utilities</a></li>
+</ul>
+
+<h3>Memory</h3>
+
+Storage Nodes in a distributed processing system need a nominal amount of memory, and the processing nodes in the framework (Spark) included with SQL Server BDC need more.
+Both Linux and Windows suport large amounts of memory (most often as much as the system can hold) natively, and no special configuration for memory is needed.
+
+Modern operating systems use a temporary area on storage to act as memory for light caching and also as being able to extend RAM memory. This should be avoided at all costs in both Windows and Linux.
+
+While technically a Processor system, NUMA (Non-Uniform Memory Access) systems allow for special memory configurations to be mixed in a single server by a processor set. Both Linux and Windows support NUMA access.
+
+<ul>
+    <li><a href="https://blogs.technet.microsoft.com/perfguru/2008/01/08/explanation-of-pagefile-usage-as-reported-in-the-task-manager/" target="_blank">Monitoring Page File use in Windows</a></li>
+    <li><a href="https://www.linux.com/news/all-about-linux-swap-space" target="_blank">Monitoring the Swap File in Linux</a></li>
+</ul>
+
+<h3>Networking</h3>
+
+The general guidance for large-scale distributed processing systems is that the network between them be as fast and collision-free (in the case of TCP/IP) as possible. The networking stacks in both Windows and Linux require no special settings within the operating system, but you should thoroughly understand the driver settings as they apply to each NIC installed in your system, that each setting is best optimized for your networking hardware and topology and that the drivers are at the latest tested versions.
+
+Although a full discussion of the TCP/IP protocol is beyond the scope of this workshop, it's important that you have a good understanding of how it works, since it permeates every part of the SQL Server BDC architecture. <a href="https://support.microsoft.com/en-us/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics" target="_blank">You can get a quick overview of TCP/IP here</a>.
+
+The other rule you should keep in mind is that in general you should have only the presentation of the data handled by the workstation or device that accesses the solution. Do not move large amounts of data back and forth over the network to have the data processed locally. That being said, there are times (such as certain IoT scenarios) where subsets of data should be moved to the client, but you will not face those scenarios in this workshop. 
+
+<h3>5-Minute Linux Overview for the Windows Professional</h3>
+
+The best way to learn an operating system is to install it and perform real-world tasks. <a href="https://www.edx.org/workshop/introduction-to-linux" target="_blank">(A good place to learn a lot more about Linux is here</a>). For this workshop, the essential concepts you need from the SQL Server perspective are: 
+
+<table style="tr:nth-child(even) {background-color: #f2f2f2;}; text-align: left; display: table; border-collapse: collapse; border-spacing: 2px; border-color: gray;">
+
+  <tr><th style="background-color: #1b20a1; color: white;">Linux Concept</th> <th style="background-color: #1b20a1; color: white;">Description</th></tr>
+
+  <tr><td><b><a href="https://www.howtogeek.com/117579/htg-explains-how-software-installation-package-managers-work-on-linux/" target="_blank">Distributions</a></b></td><td>Windows is written and controlled by Microsoft. Linux is comprised only of a small Kernel, and then all other parts of the operating system are created by commercial or the public, and packaged up into a <i>Distribution</i>. These Distributions have all of the complementary functions to the operating system, and in some cases a graphical interface and other files. The Distributions supported by SQL Server are RedHat, Ubuntu, and SuSE.</td></tr>
+  <tr><td><b><a href="https://www.howtogeek.com/117579/htg-explains-how-software-installation-package-managers-work-on-linux/" target="_blank">Package Managers</a></b></td><td>Software installation on Linux can be done manually by copying files or compiling source code. A Package Manager is a tool that simpilifies this process, and is based on the Distribution. The two package managers you will see most often in SQL Server are <b>yum</b> and <b>apt</b>.</td></tr>
+  <tr><td><b><a href="https://www.cardinalpath.com/forecasting-with-machine-learning-techniques/" target="_blank">File Systems</a></b></td><td>Like Windows, organized as a tree, but referenced by a forward-slash <b>/</b>. There are no drive letters in Linux - everything is "mounted" to what looks like a directory.</td></tr>
+  <tr><td><b><a href="https://www.cardinalpath.com/forecasting-with-machine-learning-techniques/" target="_blank">Access and Authentication</a></b></td><td>Users and Groups are stored in protected files, called <b>/etc/passwd</b> and <b>/etc/group</b>. These files and locations may be augmented or slightly different based in the distribution. By default, each user has very low privileges and must be granted access to files or directories. The <b>sudo</b> command allows you to run as a privileged user (known as root) or as another user.</td></tr>
+
+</table>
+
+The essential commands you should know for this workshop are below. In Linux you can often send the results of one command to another using the "pipe" symbol, similar to PowerShell: <b>|</b>. 
+
+<table style="tr:nth-child(even) {background-color: #f2f2f2;}; text-align: left; display: table; border-collapse: collapse; border-spacing: 2px; border-color: gray;">
+
+  <tr><th style="background-color: #1b20a1; color: white;">Linux Command</th> <th style="background-color: #1b20a1; color: white;">Description</th></tr>
+
+  <tr><td><b><a href="http://www.linfo.org/man.html" target="_blank">man</a></b></td><td>Shows help on a command or concept. You can also add <b>--help</b> to most commands for a quick syntax display. Similar to <b>HELP</b> in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/cat.html" target="_blank">cat</a></b></td><td>Display File Contents. Similar to <b>TYPE</b> in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/cd.html" target="_blank">cd</a></b></td><td>Changes Directory. Same as in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/chgrp.html" target="_blank">chgrp</a></b></td><td>Change file group access.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/chmod.html" target="_blank">chmod</a></b></td><td>Change permissions. Similar to <b>CACLS</b> in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/cp.html" target="_blank">cp</a></b></td><td>Copy source file into destination. Similar to <b>COPY</b> in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/file.html" target="_blank">file</a></b></td><td>Determine file type.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/find.html" target="_blank">find</a></b></td><td>Find files. Similar to <b>DIR filename /S</b> in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/grep.html" target="_blank">grep</a></b></td><td>Search files for regular expressions. Similar to <b>FIND</b> in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/head.html" target="_blank">head</a></b></td><td>Display the first few lines of a file.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/ln.html" target="_blank">ln</a></b></td><td>Create softlink on oldname</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/ls.html" target="_blank">ls</a></b></td><td>Display information about file type. Similar to <b>DIR</b> in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/mkdir.html" target="_blank">mkdir</a></b></td><td>Create a new directory dirname. Same as in Windows.</td></tr>
+  <tr><td><b><a href="https://www.lifewire.com/what-to-know-more-command-4051953" target="_blank">more</a></b></td><td>Display data in paginated form. Same as in Windows. An improved version of this command is <a href="https://www.lifewire.com/what-to-know-less-command-4051972" target="_blank">less</a>.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/mount.html" target="_blank">mount</a></b></td><td>Makes a drive, network location, and many other objects available to the operating system so that you can work with it.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/mv.html" target="_blank">mv</a></b></td><td>Move (Rename) a oldname to newname. Similar to <b>REN</b> and <b>DEL</b> combined in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/pwd.html" target="_blank">pwd</a></b></td><td>Print current working directory.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/rm.html" target="_blank">rm</a></b></td><td>Remove (Delete) filename. Similar to <b>DEL</b> in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/rmdir.html" target="_blank">rmdir</a></b></td><td>Delete an existing directory provided it is empty. Same as in Windows.</td></tr>  
+  <tr><td><b><a href="https://linuxacademy.com/blog/linux/linux-commands-for-beginners-sudo/" target="_blank">sudo</a></b></td><td>Elevate commands that follow to sysadmin privileges.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/tail.html" target="_blank">tail</a></b></td><td>Prints last few lines in a file.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/touch.html" target="_blank">touch</a></b></td><td>Update access and modification time of a file. Similar to <b>ECHO > test.txt</b> in Windows.</td></tr>
+
+</table>
+
+A <a href="https://opensourceforu.com/2016/07/introduction-linux-system-administration/" target="_blank">longer explanation of system administration for Linux is here</a>.
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+
+TODO: Activity Description and tasks
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+
+TODO: Enter activity description with checkbox
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+TODO: Enter activity steps description with checkbox
+https://www.tutorialspoint.com/unix_terminal_online.php
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.4 Big Data Technologies: Containers and Controlllers</h2>
+
+Bare-metal installations of an operating system such as Windows are deployed on hardware using a <i>Kernel</i>, and additional software to bring all of the hardware into a set of calls. One abstraction layer above installing software directly on hardware is using a <i>Hypervisor</i>. In essence, this layer uses the base operating system to emulate hardware. You install an operating system (called a *Guest* OS) on the Hypervisor (called the *Host*), and the Guest OS acts as if it is on bare-metal.
+
+<br>
+
+<img style="height: 300;" src="https://docs.docker.com/images/VM%402x.png">
+
+<br>
+
+In this abstraction level, you have full control (and responsibility) for the entire operating system, but not the hardware. This isolates all process space and provides an entire "Virtual Machine" to applications. For scale-out systems, a Virtual Machine allows for a distribution and control of complete computer environments using only software.
+
+<h3>Containers <i>(Docker)</i></h3>
+
+The next level of Abstraction is a <i>Container</i>. There are various types of Container technologies, in this workshop, you will focus on <a href="https://docs.docker.com" target="_blank">Docker</a>.
+
+A Docker Container is provided by the Docker runtime engine, which sits above the operating system (Windows or Linux). In this abstraction, you do not control the hardware <i>or</i> the operating system. The Container has a very small Kernel in it, and can binaries such as Python, R, SQL Server, or other binaries. A Container with all its binaries is called an <i>Image</i>. 
+
+<i>(NOTE: The Container Image Kernel can run on Windows or Linux, but you will focus on the Linux Kernel Containers in this workshop.)</i>
+
+<br>
+
+<img style="height: 300;" src="https://docs.docker.com/images/Container%402x.png"> 
+
+<br>
+
+This abstraction holds everything for an application to isolate it from other running processes. It is also completely portable - you can create an image on one system, and another system can run it so long as the Docker Runtime is installed. Containers also start very quickly, are easy to create (called <i>Composing</i>) using a simple text file with instuctions of what to install on the image. The instructions pull the base Kernel, and then any binaries you want to install. Several pre-built Containers are already available, SQL Server is one of these. <a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017" target="_blank">You can read more about installing SQL Server on Docker here</a>.
+
+You can have several Containers running at any one time, based on the amount of hardware resources where you run it. For scale-out systems, a Container allows for distribution and control of complete applications using only declaritive commands.
+
+<h3>Container Orchestration <i>(Kubernetes)</i></h3>
+
+For Big Data systems, having lots of Containers is very advantageous to segment purpose and performance profiles. However, dealing with many Container Images, allowing persisted storage, and interconnecting them for network and internetwork communications is a complex task. <i>Kubernetes</i> is an open source Container orchestrator, which can scale Container deployments according to need. The following table defines some important Kubernetes terminology:
+
+<table style="tr:nth-child(even) {background-color: #f2f2f2;}; text-align: left; display: table; border-collapse: collapse; border-spacing: 5px; border-color: gray;">
+
+  <tr><td style="background-color: AliceBlue; color: black;"><b>Component</b></td><td style="background-color: AliceBlue; color: black;"><b>Used for</b></td></tr>
+
+  <tr><td>Cluster</td><td> A Kubernetes cluster is a set of machines, known as nodes. One node controls the cluster and is designated the master node; the remaining nodes are worker nodes. The Kubernetes master is responsible for distributing work between the workers, and for monitoring the health of the cluster.</td></tr>
+  <tr><td style="background-color: AliceBlue; color: black;">Node</td><td td style="background-color: AliceBlue; color: black;"> A node runs containerized applications. It can be either a physical machine or a virtual machine. A Kubernetes cluster can contain a mixture of physical machine and virtual machine nodes.</td></tr>
+  <tr><td>Pod</td><td> A pod is the atomic deployment unit of Kubernetes. A pod is a logical group of one or more containers-and associated resources-needed to run an application. Each pod runs on a node; a node can run one or more pods. The Kubernetes master automatically assigns pods to nodes in the cluster.</td></tr>
+ 
+</table>
+	
+<br> 
+
+<p><img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/KubernetesCluster.png"></p> 	 	
+
+In SQL Server Big Data Clusters, Kubernetes is responsible for the state of the SQL Server big data clusters; Kubernetes builds and configures the cluster nodes, assigns pods to nodes, and monitors the health of the cluster.
+
+(You'll cover the storage aspects of Kubernetes clusters in a moment.)
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+
+TODO: Activity Description and tasks
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+
+TODO: Enter activity description with checkbox
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+TODO: Enter activity steps description with checkbox
+Kubernetes Training Sandbox: https://www.katacoda.com/workshops/kubernetes
+
+https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/ 
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.5 Big Data Technologies: Distributed Data Storage</h2>
+
+Traditional storage uses a call from the operating system to an underlying I/O system, as you learned earlier. These file systems are either directly connected to the operating system or appear to be connected directly using a Storage Area Network. The blocks of data are stored and managed by the operating system. 
+
+For large scale-out data systems, the mounting point for an I/O is another abstraction. For SQL Server BDC, the most commonly used scale-out file system is the <a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank">Hadoop Data File System</a>, or <i>HDFS</i>. HDFS is a set of Java code that gathers disparate disk subsystems into a <i>Cluster</i> which is comprised of various <i>Nodes</i> - a <i>NameNode</i>, which manages the cluster's metadata, and <i>DataNodes</i> that physically store the data. Files and directories are represented on the NameNode by a structure called <i>inodes</i>. Inodes record attributes such as permissions, modification and access times, and namespace and diskspace quotas.
+
+<p><img style="height: 300; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/hdfs.png"></p> 	 	
+
+With an abstraction such as Containers, storage becomes an issue for two reasons: The storage can disappear when the Container is removed, and other Containers and technologies can't access storage easily within a Container. 
+
+To solve this, Kunbernetes implements the concept of <a href="https://docs.docker.com/engine/admin/volumes/" target="_blank">Volumes</a>, and <a href="https://kubernetes.io/docs/concepts/storage/volumes/" target="_blank">Kubernetes extended this concept</a>. Using <a href="https://github.com/kubernetes/examples/blob/master/staging/volumes/azure_disk/README.md" target="_blank">a specific protocol and command, Kubernetes (and in specific, SQL Server BDC) mounts the storage as a *Persistent Volume* and uses a construct called a *Persistent Volume Claim* to access it</a>. A Kubernetes Volume is a mounted directory which is accessible to the Containers in a Pod.
+
+You'll cover Volumes in more depth in a future module as you learn how the SQL Server BDC takes advantage of these constructs.
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+
+TODO: Activity Description and tasks
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+
+TODO: Enter activity description with checkbox
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+TODO: Enter activity steps description with checkbox
+
+https://hortonworks.com/blog/install-hadoop-windows-hortonworks-data-platform-2-0/ 
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.6 Big Data Technologies: Command and Control</h2>
+
+There are three primary tools and utilities you will use to control the SQL Server Big Data Cluster:
+
+ - kubectl
+ - mssqlctl
+ - Azure Data Studio
+
+<h3>Managing the Kubernetes Cluster<i>(kubectl)</i></h3>
+
+The **kubectl** command accesses the Application Programming Interfaces (API's) from Kubernetes. The utility <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_blank">can be installed your workstation using this process</a>, and it is also available in the <a href="https://azure.microsoft.com/en-us/features/cloud-shell/" target="_blank">Azure Cloud Shell with no installation</a>. 
+
+<br>
+<img style="height: 200;" src="../graphics/kubectl.png"> 
+<br>
+
+A <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank">full list of the **kubectl** commands is here</a>. You can <a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/cluster-troubleshooting-commands?view=sqlallproducts-allversions 
+" target="_blank">use these commands for troubleshooting the SQL Server BDC as well</a>. 
+ 
+You'll explore further operations with these tools in the <i>Management and Monitoring</i> module.
+
+<h3>Managing and Monitoring the SQL Server Big Data Cluster <i>(mssqlctl)</i></h3>
+
+The **mssqlctl** command-line utility is written in Python and can be installed on your workstation using the **pip** command in Python. You will see how to install this utility in the *Planning, Installation and Configuration* module.
+
+The **mssqlctl** utility enables cluster administrators to bootstrap and manage big data clusters via the REST APIs exposed by the Controller service. The controller is deployed and hosted in the same Kubernetes namespace where the customer wants to build out a big data cluster. The Controller is responsible for core logic for deploying and managing a big data cluster.
+
+The <a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/concept-controller?view=sqlallproducts-allversions 
+" target="_blank">Controller service is installed by a Kubernetes administrator during cluster bootstrap</a>, using the mssqlctl command-line utility. 
+
+You'll explore further operations with these tools in the <i>Management and Monitoring</i> module.
+
+<h3>SQL Server BDC Programming and GUI Surface <i>(Azure Data Studio and Jupyter Notebooks)</i></h3>
+
+
+Jupyter Notebooks are a web-page-based interface consisting of Cells that can contain 
+
+Azure Data Studio is a cross-platform database tool to manage and program on-premises and cloud data platforms on Windows, MacOS, and Linux. It is extensible, and one of these extensions is how you work with Azure Data Studio code and Jupyter Notebooks. It is built on the Visual Studio Code shell. The editor in Azure Data Studio has Intellisense, code snippets, source control integration, and an integrated terminal. 
+
+If you have not completed the pre-requisites for this workshop you can <a href="https://docs.microsoft.com/en-us/sql/azure-data-studio/what-is?view=sql-server-2017 
+" target="_blank">install Azure Data Studio from this location</a>, and you will install the Extension to work with SQL Server Big Data Clusters in a future module</a>.
+
+<br>
+<p><img style="height: 300; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/ads.png"></p> 	 	
+<br>
+
+You'll explore further operations with the Azure Data Studio in the <i>Operationalization</i> module.
+
+<br>
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+
+TODO: Activity Description and tasks
+
+
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.7 Big Data Technoligies: Data Ingestion, Processing and Output</h2>
+
+TODO: Topic Description
+
+
+<h3>Data Ingestion <i>(HDFS and PolyBase)</i></h3>
+TODO: Topic Description
+
+
+You'll see an example of ingesting data using HDFS and PolyBase in the <i>Operationalization</i> module.
+
+<br>
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+<br>
+
+TODO: Enter activity description with checkbox
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+TODO: Enter activity steps description with checkbox
+
+
+<h3>Data Pipelines <i>(Apache Spark)</i></h3>
+TODO: Topic Description
+
+
+<p><img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/spark.jpg"></p> 	 	
+
+
+You'll see an example of ingesting data using Apache Spark in the <i>Operationalization</i> module.
+
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+
+TODO: Activity Description and tasks
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+
+TODO: Enter activity description with checkbox
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+TODO: Enter activity steps description with checkbox
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
+<ul>
+    <li><a href = "https://www.simplilearn.com/data-science-vs-big-data-vs-data-analytics-article" target="_blank">Understanding the Big Data Landscape</a></li>
+    <li><a href = "https://docs.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-2017" target="_blank">Wide World Importers Data Dictionary and company description</a></li>
+    <li><a href = "http://www.admin-magazine.com/Articles/Linux-Essentials-for-Windows-Admins-Part-1" target="_blank">Linux for the Windows Admin</a></li>
+    <li><a href = "file:///home/buck/Documents/windows/Users/bwoody/OneDrive%20-%20Microsoft/workshops/Unstaged/SQL2019BDC-Unstaged/SQL2019BDC/01%20-%20The%20Big%20Data%20Landscape.md" target="_blank">Docker Guide</a></li>
+    <li><a href = "." target="_blank">Kubernetes</a></li>
+    <li><a href = "." target="_blank">HDFS</a></li>
+    <li><a href = "." target="_blank">Azure Data Studio</a></li>
+    <li><a href = "." target="_blank">Kubernetes Security</a></li>
+    <li><a href = "." target="_blank">Data Ingestion into Azure Storage</a></li>
+</ul>
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/geopin.png"><b >Next Steps</b></p>
+
+Next, Continue to <a href="02%20-%20SQL%20Server%20BDC%20Components.md" target="_blank"><i> SQL Server Big Data Cluster Components</i></a>.
