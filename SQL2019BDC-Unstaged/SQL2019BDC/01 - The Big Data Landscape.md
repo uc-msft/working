@@ -408,13 +408,31 @@ You'll explore further operations with these tools in the <i>Management and Moni
 
 <h3>SQL Server BDC Programming and GUI Surface <i>(Azure Data Studio and Jupyter Notebooks)</i></h3>
 
+<h4>Jupyter Notebooks</h4>
 
-Jupyter Notebooks are a web-page-based interface consisting of Cells that can contain 
+Jupyter *Notebooks* are a web-page-based interface consisting of Cells that can contain text (using the Markdown specification) or code. The code depends on the Kernel that has been installed for the Notebook. Traditionally, Python and R Kernels are installed by default. 
 
-Azure Data Studio is a cross-platform database tool to manage and program on-premises and cloud data platforms on Windows, MacOS, and Linux. It is extensible, and one of these extensions is how you work with Azure Data Studio code and Jupyter Notebooks. It is built on the Visual Studio Code shell. The editor in Azure Data Studio has Intellisense, code snippets, source control integration, and an integrated terminal. 
+*Notebook Servers* run **.ipynb** files (the Notebooks). You can install a Notebook Server locally, remotely, or you can use something like Azure Notebooks which provides a quick, easy way to work with and share Notebooks. (It's all a bit like a specific kind of web server). 
 
-If you have not completed the pre-requisites for this workshop you can <a href="https://docs.microsoft.com/en-us/sql/azure-data-studio/what-is?view=sql-server-2017 
+*Libraries* are a container on your Notebook server where you can have Notebooks, code, directories and other files.
+
+Notebooks are JSON files that contain areas called *Cells*, which have text or code in them. When you double-click a Notebook, the Notebook server renders and can display text or run code, such as R or Python, using a Kernel.
+
+Cells can hold text (such as *Markdown*, *HTML*, or *LaTeX*) which you can mix together, or Code. Double-click a Cell in a Notebook to edit it, and then click the "Run" button to render what you typed. Code runs and displays an output below the cell. You can toggle the result for code to show or hide it.
+
+*Markdown* is a simplified markup language for text. Use it for general text and simple graphics. You can <a href="https://www.markdowntutorial.com/" target="_blank">read more about Markdown here</a>, and <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">there's a great cheat-sheet on Markdown here</a>. 
+
+You'll use Notebooks within Azure Data Studio to work with Spark, which you'll learn about in a moment. Learn <a href="https://jupyter-notebook.readthedocs.io/en/stable/" target="_blank">more about Jupyter Notebooks here</a>.  
+
+<h4>Azure Data Studio</h4>
+
+*Azure Data Studio* is a cross-platform database tool to manage and program on-premises and cloud data platforms on Windows, MacOS, and Linux. It is extensible, and one of these extensions is how you work with Azure Data Studio code and Jupyter Notebooks. It is built on the Visual Studio Code shell. The editor in Azure Data Studio has Intellisense, code snippets, source control integration, and an integrated terminal. 
+
+If you have not completed the pre-requisites for this workshop you can <a href="https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sql-server-2017
 " target="_blank">install Azure Data Studio from this location</a>, and you will install the Extension to work with SQL Server Big Data Clusters in a future module</a>.
+
+You can <a href="https://docs.microsoft.com/en-us/sql/azure-data-studio/what-is?view=sql-server-2017 
+" target="_blank">learn more about Azure Data Studio here</a>.
 
 <br>
 <p><img style="height: 300; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/ads.png"></p> 	 	
@@ -428,18 +446,49 @@ You'll explore further operations with the Azure Data Studio in the <i>Operation
 
 TODO: Activity Description and tasks
 
-
+https://notebooks.azure.com/BuckWoodyNoteBooks/projects/AzureNotebooks 
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.7 Big Data Technoligies: Data Ingestion, Processing and Output</h2>
 
-TODO: Topic Description
+In any large data system, you will need a way to bring the data in. In some cases, you will edit the data either on the way in, or after it is staged using a process called "Extract, Transform and Load" (ETL) or leave the data "pure" and unaltered (common in Data Science projects), using a process called "Extract, Load and Transform" (ELT). 
 
+In SQL Server Big Data Clusters, you'll learn about three ways that the system interacts with data:
 
-<h3>Data Ingestion <i>(HDFS and PolyBase)</i></h3>
-TODO: Topic Description
+ - "Virtualize" the data by pushing down the query to the source system (no data is ingested in this scenario)
+ - Ingesting data into SQL Server Tables, using the PolyBase feature or into standard SQL Server constructs
+ - Loading data into HDFS
 
+In addition, you can create complex "Pipelines" of data ingress using Apache Spark.
+
+The first considerations for loading data are source-data locality and network bandwidth, utilization, and predictability of the path to the SQL Server BDC destination. Depending on where the data originates, network bandwidth will play a major part in your loading performance. For source data residing on premises, network throughput performance and predictability can be enhanced with a service such as a dedicated network path or "hot potato routing". You must consider the current average bandwidth, utilization, predictability, and maximum capabilities of your current public Internet-facing, source-to-destination route, regardless of the method you are using.
+
+<h3>Data Ingestion <i>(PolyBase and HDFS)</i></h3>
+
+In this section you'll learn more about working with the last two options for loading data into the SQL Server BDC architecture. In the *Operationalization* module you'll learn more about Data Virtualization, and also see a practical method for working with data ingestion and pipelines.
+
+<h4>Data Ingestion for SQL Server and PolyBase</h4>
+
+For SQL Server tables (regardless of structure), standard ingestion methods work well: The bcp utility, SQL Server Integration Services, and SQLBulkCopy. 
+
+TODO: POLYBASE
+
+https://docs.microsoft.com/en-us/azure/data-factory/v1/data-factory-introduction 
+
+https://docs.microsoft.com/en-us/sql/relational-databases/polybase/polybase-queries?view=sql-server-2017#import-data 
+
+<h4>Data Ingestion for HDFS</h4>
+
+Since HDFS is a file-system, data transfer is largely a matter of where it resides. If your HDFS mount-point is on-premises, you can use multiple tools to copy or transfer data to it, even including mounting it in Linux as a file system. There is also a Network File System (NFS) <a href="https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-hdfs/HdfsNfsGateway.html" target=_blank">gateway you can install to access the HDFS mount point</a>. 
+
+There is also a <a href="https://github.com/EDS-APHP/py-hdfs-mount" target="_blank">set of Python code that uses Fuse to mount HDFS, allowing you to access the mount point programatically</a>. 
+
+If the HDFS is located in the cloud, each provider has methods for accessing that data. Microsoft Azure has multiple ways of hosting HDFS, and a common method of transferring data to almost any location within Azure is using <a href="https://docs.microsoft.com/en-us/azure/data-factory/v1/data-factory-create-datasets" target="_blank">Azure Data Factory</a>.
+
+<br>
+<img style="height: 300;" src="../graphics/adf.png"> 
+<br>
 
 You'll see an example of ingesting data using HDFS and PolyBase in the <i>Operationalization</i> module.
 
@@ -456,6 +505,8 @@ TODO: Enter activity steps description with checkbox
 
 <h3>Data Pipelines <i>(Apache Spark)</i></h3>
 TODO: Topic Description
+
+https://www.kdnuggets.com/2019/01/practical-apache-spark-10-minutes.html 
 
 
 <p><img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/spark.jpg"></p> 	 	
@@ -477,7 +528,6 @@ TODO: Enter activity description with checkbox
 TODO: Enter activity steps description with checkbox
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
-
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 <ul>
