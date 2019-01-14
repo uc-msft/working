@@ -81,4 +81,4 @@ TODO: Enter any code typing here
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/geopin.png"><b >Next Steps</b></p>
 
-Next, Continue to <a href="ModernizeSQL2019/01%20-%20ModuleName.md" target="_blank"><i> 01 - ModuleName</i></a>.
+Next, Continue to <a href="01-ModuleName.md" target="_blank"><i> 01 - ModuleName</i></a>.

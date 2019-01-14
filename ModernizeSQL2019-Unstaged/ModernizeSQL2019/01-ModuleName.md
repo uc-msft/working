@@ -72,4 +72,8 @@ TODO: Enter activity steps description with checkbox
     <li><a href="url" target="_blank">TODO: Enter courses, books, posts, whatever the student needs to extend their study</a></li>
 </ul>
 
+Next, Continue to <a href="01-ModuleName.md" target="_blank"><i> 02 - ModuleName</i></a>.
+
+(or) 
+
 Congratulations! You have completed this workshop on <TODO: Enter workshop name>. You now have the tools, assets, and processes you need to extrapolate this information into other applications.
