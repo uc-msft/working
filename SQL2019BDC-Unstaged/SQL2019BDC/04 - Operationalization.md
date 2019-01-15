@@ -16,11 +16,10 @@ You'll cover the following topics in this Module:
 
 <dl>
 
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
+  <dt><a href="#4-0">4.0 End-To-End Solution for Big Data Clusters <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#4-1">4.1 Data Virtualization <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#4-2">4.2 Creating a Data Mart using Big Data Cluster <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#4-3">4.3 Querying HDFS Data using Big Data Cluster <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
 
 </dl>
 

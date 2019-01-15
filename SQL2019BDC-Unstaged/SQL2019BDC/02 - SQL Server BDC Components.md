@@ -18,7 +18,7 @@ You'll cover the following topics in this Module:
 
   <dt><a href="#2-0">2.0 SQL Server 2019 Big Data Clusters <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
   <dt><a href="#2-1">2.1 Data Virtualization <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
-  <dt><a href="#2-2">2.1 SQL Server 2019 Big Data Clusters <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#2-2">2.2 Storage Pools <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
   <dt><a href="#2-3">2.1 SQL Server 2019 Big Data Clusters <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
 
 </dl>
@@ -66,7 +66,7 @@ TODO: Enter activity steps description with checkbox
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 
-<h2><a name="2-3">2.3 Storage Pools (aka Data Mart)</a></h2>
+<h2><a name="2-2">2.2 Storage Pools (aka Data Mart)</a></h2>
 
 The storage pool consists of storage nodes comprised of SQL Server on Linux, Spark, and HDFS. All the storage nodes in a SQL big data cluster are members of an HDFS cluster. You can use these as a "Data Mart" construct to work with large sets of data stored on disparate data sources. 
 
@@ -93,7 +93,7 @@ TODO: Enter activity steps description with checkbox
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 
-<h3>2.1.4 SQL Server Cluster Architecture</h3>
+<h2><a name="2-3">2.3 SQL Server Cluster Architecture</a></h2>
 
 TODO: Topic Description
 

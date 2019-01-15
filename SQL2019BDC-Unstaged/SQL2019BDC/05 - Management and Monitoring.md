@@ -15,11 +15,10 @@ You'll cover the following topics in this Module:
 
 <dl>
 
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
+  <dt><a href="#5-0">5.0 Managing and Monitoring Your Solution <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#5-1">5.1 Using kubectl commands <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#5-2">5.2 Using mssqlctl commands <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#5-3">5.3 Using the Big Data Cluster Portal <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
 
 </dl>
 

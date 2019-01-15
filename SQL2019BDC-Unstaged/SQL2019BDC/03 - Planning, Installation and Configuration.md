@@ -16,11 +16,10 @@ You'll cover the following topics in this Module:
 
 <dl>
 
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
+  <dt><a href="#3-0">3.0 Planning and Installation <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#3-1">3.1 Installing on Azure Kubernetes Service <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#3-2">3.2 Installing locally using KubeADM <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#3-3">3.3 Installing locally using minikube <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
 
 </dl>
 
