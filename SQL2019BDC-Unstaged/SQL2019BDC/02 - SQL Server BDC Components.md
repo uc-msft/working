@@ -42,9 +42,7 @@ The next module covers planning the solution and creating the end-to-end system 
 Using a series of *connectors*, SQL Server BDC can query data using the PolyBase feature. PolyBase enables your SQL Server instance to process Transact-SQL queries that read data from external data sources. Starting in SQL Server 2019, you can access external data in Hadoop and Azure Blob Storage and external data in SQL Server, Oracle, Teradata, and MongoDB - as well as Generic ODBC sources. PolyBase pushes as much of the query as possible to the source system, which optimizes the query.
 
 <br>
-
 <img style="height: 150; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://docs.microsoft.com/en-us/sql/big-data-cluster/media/big-data-cluster-overview/data-virtualization.png">
-
 <br>
 
 In PolyBase, you define the external table, configure the connection and security, and then use standard Transact-SQL statements to join and work with the data as if it were an internal table. 
