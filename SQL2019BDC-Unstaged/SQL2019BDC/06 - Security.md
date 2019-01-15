@@ -16,11 +16,10 @@ You'll cover the following topics in this Module:
 
 <dl>
 
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
-  <dt><a href="#1-1">Topic <i>(status)</i></a></dt>
+  <dt><a href="#6-0">6.0 Managing SQL Server Big Data Cluster Security <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#6-1">6.1 Access <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#6-2">6.2 Authentication <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#6-3">6.3 Authorization <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
 
 </dl>
 
