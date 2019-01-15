@@ -10,23 +10,25 @@
 
 In this workshop you'll cover using a Process and and various Platform components to create a SQL Server Big Data Cluster solution you can deploy on premises, in the cloud, or in a hybrid architecture. In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic. There's a lot here - so focus on understanding the overall system first, then come back anbd explore each section.
 
-(<a href="file:///Users/bwoody/Documents/OneDrive%20-%20Microsoft/workshops/workshops/SQL-SQL2019-BDC/SQL2019BDC/00%20-%20Pre-Requisites.md" target="_blank">Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.)
+(<a href="00%20-%20Pre-Requisites.md" target="_blank">Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.)
 
-You'll cover these topics in the Workshop:
+You'll cover the following topics in this Module:
+
 <dl>
 
-  <dt><a href="SQL2019BDC/01%20-%20The%20Big%20Data%20Landscape.md" target="_blank">01 - The Big Data Landscape<dt>
-  <dt><a href="SQL2019BDC/02%20-%20SQL%20Server%20BDC%20Components.md" target="_blank">02 - SQL Server BDC Components</a></dt>
-  <dt><a href="SQL2019BDC/03%20-%20Planning,%20Installation%20and%20Configuration.md" target="_blank">03 - Planning, Installation and Configuration</a></dt>
-  <dt><a href="SQL2019BDC/04%20-%20Operationalization.md" target="_blank">04 - Operationalization</a></dt>
-  <dt><a href="SQL2019BDC/05%20-%20Management%20and%20Monitoring.md" target="_blank">05 - Management and <br> Monitoring</a></dt>
-  <dt><a href="SQL2019BDC/06%20-%20Security.md" target="_blank">06 - Security</a></dt>
+  <dt><a href="#1-1">1.1 Business Applications and Big Data <i>(complete)</i></a></dt>
+  <dt><a href="#1-2">1.2 Workshop Solution <i>(needs updateed to latest complete graphic)</i></a></dt>
+  <dt><a href="#1-3">1.3 Big Data Technologies: Operating Systems <i>(needs lab)</i></a></dt>
+  <dt><a href="#1-4">1.4 Big Data Technologies: Containers and Controlllers <i>(needs lab)</i></a></dt>
+  <dt><a href="#1-5">1.5 Big Data Technologies: Distributed Data Storage <i>(needs lab)</i></a></dt>
+  <dt><a href="#1-6">1.6 Big Data Technologies: Command and Control <i>(needs lab)</i></a></dt>
+  <dt><a href="#1-7">1.7 Big Data Technologies: Data Ingestion, Processing and Output (<i>needs Polybase info, ADF, other ingress methods, Spark discussion, labs)</i></a></dt>
 
 </dl>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.1 Business Applications and Big Data</h2>
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-1">1.1 Business Applications and Big Data</a></h2>
 
 Businesses require near real-time insights from ever-larger sets of data. Large-scale data ingestion requires scale-out storage and processing in ways that allow fast response times. In addition to simply querying this data, organizations want full analysis and even predictive capabilities over their data. A few industry examples of applications of technology that create large data sets are:
 
@@ -86,7 +88,7 @@ While you will review the design for a complete solution in this workshop, it ex
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2>1.2 Workshop Solution</h2>
+<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2><a name="1-2"><a name="1-2">1.2 Workshop Solution</a></h2>
 
 This solution uses an example of a retail organization that has multiple data sources, but it has many applications to the otherindustries listed above. It serves as an end-to-end scenario where you will learn the technologies and processes you can use to create multiple solutions. 
 
@@ -151,7 +153,7 @@ Understanding the Soltuion: List design choice questions
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.3 Big Data Technologies: Operating Systems</h2>
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-3">1.3 Big Data Technologies: Operating Systems</a></h2>
 
 In this section you will learn more about the designs of two primary operating systems (Microsoft Windows and Linux) and how they are suited to working with Big Data. 
 
@@ -214,7 +216,7 @@ The other rule you should keep in mind is that in general you should have only t
 
 <h3>5-Minute Linux Overview for the Windows Professional</h3>
 
-The best way to learn an operating system is to install it and perform real-world tasks. <a href="https://www.edx.org/workshop/introduction-to-linux" target="_blank">(A good place to learn a lot more about Linux is here</a>). For this workshop, the essential concepts you need from the SQL Server perspective are: 
+The best way to learn an operating system is to install it and perform real-world tasks. <a href="https://www.edx.org/course/introduction-to-linux" target="_blank">(A good place to learn a lot more about Linux is here</a>). For this workshop, the essential concepts you need from the SQL Server perspective are: 
 
 <table style="tr:nth-child(even) {background-color: #f2f2f2;}; text-align: left; display: table; border-collapse: collapse; border-spacing: 2px; border-color: gray;">
 
@@ -275,7 +277,7 @@ https://www.tutorialspoint.com/unix_terminal_online.php
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.4 Big Data Technologies: Containers and Controlllers</h2>
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-4">1.4 Big Data Technologies: Containers and Controlllers</a></h2>
 
 Bare-metal installations of an operating system such as Windows are deployed on hardware using a <i>Kernel</i>, and additional software to bring all of the hardware into a set of calls. One abstraction layer above installing software directly on hardware is using a <i>Hypervisor</i>. In essence, this layer uses the base operating system to emulate hardware. You install an operating system (called a *Guest* OS) on the Hypervisor (called the *Host*), and the Guest OS acts as if it is on bare-metal.
 
@@ -344,7 +346,7 @@ https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-in
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.5 Big Data Technologies: Distributed Data Storage</h2>
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-5">1.5 Big Data Technologies: Distributed Data Storage</a></h2>
 
 Traditional storage uses a call from the operating system to an underlying I/O system, as you learned earlier. These file systems are either directly connected to the operating system or appear to be connected directly using a Storage Area Network. The blocks of data are stored and managed by the operating system. 
 
@@ -374,7 +376,7 @@ https://hortonworks.com/blog/install-hadoop-windows-hortonworks-data-platform-2-
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.6 Big Data Technologies: Command and Control</h2>
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-6">1.6 Big Data Technologies: Command and Control</a></h2>
 
 There are three primary tools and utilities you will use to control the SQL Server Big Data Cluster:
 
@@ -450,7 +452,7 @@ https://notebooks.azure.com/BuckWoodyNoteBooks/projects/AzureNotebooks
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.7 Big Data Technoligies: Data Ingestion, Processing and Output</h2>
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-7">1.7 Big Data Technologies: Data Ingestion, Processing and Output</a></h2>
 
 In any large data system, you will need a way to bring the data in. In some cases, you will edit the data either on the way in, or after it is staged using a process called "Extract, Transform and Load" (ETL) or leave the data "pure" and unaltered (common in Data Science projects), using a process called "Extract, Load and Transform" (ELT). 
 
@@ -503,13 +505,28 @@ TODO: Enter activity description with checkbox
 TODO: Enter activity steps description with checkbox
 
 
-<h3>Data Pipelines <i>(Apache Spark)</i></h3>
+<h3>Data Pipelines <i>(<a name="1-7">Apache Spark</a>)</i></h3>
 TODO: Topic Description
 
 https://www.kdnuggets.com/2019/01/practical-apache-spark-10-minutes.html 
 
 
-<p><img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/spark.jpg"></p> 	 	
+<br>
+<p><img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/spark2.png"></p> 	 	
+<br>
+
+<br>
+<p><img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/spark3.png"></p> 	 	
+<br>
+
+
+https://databricks.com/blog/2016/01/04/introducing-apache-spark-datasets.html - 
+
+RDD (2011): Distribution of JVM objects, Functional Operators (map, filter, etc)
+
+DataFrame (2013): Distribution of Row objects, Expression-based operations and UDF’s, Logical plans and an optimizer, Fast, efficient internal representations
+
+Dataset (2015): Internally rows, externally JVM objects – type-safe + fast, Slower than DF’s, not as suited for interactive analysis 
 
 
 You'll see an example of ingesting data using Apache Spark in the <i>Operationalization</i> module.

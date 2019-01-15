@@ -10,23 +10,22 @@
 
 In this workshop you'll cover using a Process and and various Platform components to create a SQL Server Big Data Cluster solution you can deploy on premises, in the cloud, or in a hybrid architecture. In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic.
 
-(<a href="file:///Users/bwoody/Documents/OneDrive%20-%20Microsoft/workshops/workshops/SQL-SQL2019-BDC/SQL2019BDC/00%20-%20Pre-Requisites.md" target="_blank">Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.)
+(<a href="00%20-%20Pre-Requisites.md" target="_blank">Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.)
 
-You'll cover these topics in the workshop:
+You'll cover the following topics in this Module:
+
 <dl>
 
-  <dt><a href="SQL2019BDC/01%20-%20The%20Big%20Data%20Landscape.md" target="_blank">01 - The Big Data Landscape<dt>
-  <dt><a href="SQL2019BDC/02%20-%20SQL%20Server%20BDC%20Components.md" target="_blank">02 - SQL Server BDC Components</a></dt>
-  <dt><a href="SQL2019BDC/03%20-%20Planning,%20Installation%20and%20Configuration.md" target="_blank">03 - Planning, Installation and Configuration</a></dt>
-  <dt><a href="SQL2019BDC/04%20-%20Operationalization.md" target="_blank">04 - Operationalization</a></dt>
-  <dt><a href="SQL2019BDC/05%20-%20Management%20and%20Monitoring.md" target="_blank">05 - Management and <br> Monitoring</a></dt>
-  <dt><a href="SQL2019BDC/06%20-%20Security.md" target="_blank">06 - Security</a></dt>
+  <dt><a href="#2-0">2.0 SQL Server 2019 Big Data Clusters <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#2-1">2.1 Data Virtualization <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#2-2">2.1 SQL Server 2019 Big Data Clusters <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#2-3">2.1 SQL Server 2019 Big Data Clusters <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
 
 </dl>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.1 SQL Server 2019 Big Data Clusters</h2>
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="2-0">2.0 SQL Server 2019 Big Data Clusters</a></h2>
 
 SQL Server 2019 Big Data Clusters (BDC) provides three ways to work with large sets of data:
 
@@ -38,7 +37,7 @@ Each of these functions are available separately based on the requirements of yo
 
 The next module covers planning the solution and creating the end-to-end system to support it using each of these components.
 
-<h3>2.1.1 Data Virtualization</h3>
+<h3><a name="2-1">2.1 Data Virtualization</a></h3>
 
 Using a series of *connectors*, SQL Server BDC can query data using the PolyBase feature. PolyBase enables your SQL Server instance to process Transact-SQL queries that read data from external data sources. Starting in SQL Server 2019, you can access external data in Hadoop and Azure Blob Storage and external data in SQL Server, Oracle, Teradata, and MongoDB - as well as Generic ODBC sources. PolyBase pushes as much of the query as possible to the source system, which optimizes the query.
 
@@ -67,7 +66,7 @@ TODO: Enter activity steps description with checkbox
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 
-<h2>2.1.3 Storage Pools (aka Data Mart)</h2>
+<h2><a name="2-3">2.3 Storage Pools (aka Data Mart)</a></h2>
 
 The storage pool consists of storage nodes comprised of SQL Server on Linux, Spark, and HDFS. All the storage nodes in a SQL big data cluster are members of an HDFS cluster. You can use these as a "Data Mart" construct to work with large sets of data stored on disparate data sources. 
 
