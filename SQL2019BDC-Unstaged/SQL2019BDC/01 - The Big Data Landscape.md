@@ -238,18 +238,18 @@ The essential commands you should know for this workshop are below. In Linux you
   <tr><td><b><a href="http://www.linfo.org/man.html" target="_blank">man</a></b></td><td>Shows help on a command or concept. You can also add <b>--help</b> to most commands for a quick syntax display. Similar to <b>HELP</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/cat.html" target="_blank">cat</a></b></td><td>Display File Contents. Similar to <b>TYPE</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/cd.html" target="_blank">cd</a></b></td><td>Changes Directory. Same as in Windows.</td></tr>
-  <tr><td><b><a href="http://www.linfo.org/chgrp.html" target="_blank">chgrp</a></b></td><td>Change file group access.</td></tr>
-  <tr><td><b><a href="http://www.linfo.org/chmod.html" target="_blank">chmod</a></b></td><td>Change permissions. Similar to <b>CACLS</b> in Windows.</td></tr>
+  <tr><td><b><a href="https://linux.die.net/man/1/chgrp" target="_blank">chgrp</a></b></td><td>Change file group access.</td></tr>
+  <tr><td><b><a href="https://linux.die.net/man/1/chmod" target="_blank">chmod</a></b></td><td>Change permissions. Similar to <b>CACLS</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/cp.html" target="_blank">cp</a></b></td><td>Copy source file into destination. Similar to <b>COPY</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/file.html" target="_blank">file</a></b></td><td>Determine file type.</td></tr>
-  <tr><td><b><a href="http://www.linfo.org/find.html" target="_blank">find</a></b></td><td>Find files. Similar to <b>DIR filename /S</b> in Windows.</td></tr>
+  <tr><td><b><a href="https://linux.die.net/man/1/find" target="_blank">find</a></b></td><td>Find files. Similar to <b>DIR filename /S</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/grep.html" target="_blank">grep</a></b></td><td>Search files for regular expressions. Similar to <b>FIND</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/head.html" target="_blank">head</a></b></td><td>Display the first few lines of a file.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/ln.html" target="_blank">ln</a></b></td><td>Create softlink on oldname</td></tr>
-  <tr><td><b><a href="http://www.linfo.org/ls.html" target="_blank">ls</a></b></td><td>Display information about file type. Similar to <b>DIR</b> in Windows.</td></tr>
+  <tr><td><b><a href="https://linux.die.net/man/1/ls" target="_blank">ls</a></b></td><td>Display information about file type. Similar to <b>DIR</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/mkdir.html" target="_blank">mkdir</a></b></td><td>Create a new directory dirname. Same as in Windows.</td></tr>
   <tr><td><b><a href="https://www.lifewire.com/what-to-know-more-command-4051953" target="_blank">more</a></b></td><td>Display data in paginated form. Same as in Windows. An improved version of this command is <a href="https://www.lifewire.com/what-to-know-less-command-4051972" target="_blank">less</a>.</td></tr>
-  <tr><td><b><a href="http://www.linfo.org/mount.html" target="_blank">mount</a></b></td><td>Makes a drive, network location, and many other objects available to the operating system so that you can work with it.</td></tr>
+  <tr><td><b><a href="https://linux.die.net/man/8/mount" target="_blank">mount</a></b></td><td>Makes a drive, network location, and many other objects available to the operating system so that you can work with it.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/mv.html" target="_blank">mv</a></b></td><td>Move (Rename) an oldname to newname. Similar to <b>REN</b> and <b>DEL</b> combined in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/pwd.html" target="_blank">pwd</a></b></td><td>Print current working directory.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/rm.html" target="_blank">rm</a></b></td><td>Remove (Delete) filename. Similar to <b>DEL</b> in Windows.</td></tr>
