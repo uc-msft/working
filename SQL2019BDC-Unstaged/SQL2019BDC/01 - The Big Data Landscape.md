@@ -8,7 +8,7 @@
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h1>The Big Data Landscape</h1>
 
-In this workshop you'll cover using a Process and and various Platform components to create a SQL Server Big Data Cluster solution you can deploy on premises, in the cloud, or in a hybrid architecture. In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic. There's a lot here - so focus on understanding the overall system first, then come back anbd explore each section.
+In this workshop you'll cover using a Process and various Platform components to create a SQL Server Big Data Cluster solution you can deploy on premises, in the cloud, or in a hybrid architecture. In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic. There's a lot here - so focus on understanding the overall system first, then come back and explore each section.
 
 (<a href="00%20-%20Pre-Requisites.md" target="_blank">Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.)
 
@@ -17,12 +17,12 @@ You'll cover the following topics in this Module:
 <dl>
 
   <dt><a href="#1-1">1.1 Business Applications and Big Data <i>(complete)</i></a></dt>
-  <dt><a href="#1-2">1.2 Workshop Solution <i>(needs updateed to latest complete graphic)</i></a></dt>
+  <dt><a href="#1-2">1.2 Workshop Solution <i>(TODO needs updated to latest complete graphic)</i></a></dt>
   <dt><a href="#1-3">1.3 Big Data Technologies: Operating Systems <i>(needs lab)</i></a></dt>
-  <dt><a href="#1-4">1.4 Big Data Technologies: Containers and Controlllers <i>(needs lab)</i></a></dt>
+  <dt><a href="#1-4">1.4 Big Data Technologies: Containers and Controllers <i>(needs lab)</i></a></dt>
   <dt><a href="#1-5">1.5 Big Data Technologies: Distributed Data Storage <i>(needs lab)</i></a></dt>
   <dt><a href="#1-6">1.6 Big Data Technologies: Command and Control <i>(needs lab)</i></a></dt>
-  <dt><a href="#1-7">1.7 Big Data Technologies: Data Ingestion, Processing and Output (<i>needs Polybase info, ADF, other ingress methods, Spark discussion, labs)</i></a></dt>
+  <dt><a href="#1-7">1.7 Big Data Technologies: Data Ingestion, Processing and Output (<i>needs PolyBase info, ADF, other ingress methods, Spark discussion, labs)</i></a></dt>
 
 </dl>
 
@@ -70,7 +70,7 @@ Businesses require near real-time insights from ever-larger sets of data. Large-
 
 </table>
 
-While solutions for large-scale data processing exist, they are often batch-based, which has a lag in the time from query to response. Also, batch systems <a hrefr="https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html" target="_blank">such as Hadoop </a>are complicated to set up and manage. Operational data is often stored in Relational Database systems on-premises, and joining that data to larger-scale cloud systems exposes security weaknesses and brittle architectures.
+While solutions for large-scale data processing exist, they are often batch-based, which has a lag in the time from query to response. Also, batch systems <a href="https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html" target="_blank">such as Hadoop </a>are complicated to set up and manage. Operational data is often stored in Relational Database systems on-premises, and joining that data to larger-scale cloud systems exposes security weaknesses and brittle architectures.
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Define Your Use-Case</b></p>
 
@@ -90,11 +90,11 @@ While you will review the design for a complete solution in this workshop, it ex
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2><a name="1-2"><a name="1-2">1.2 Workshop Solution</a></h2>
 
-This solution uses an example of a retail organization that has multiple data sources, but it has many applications to the otherindustries listed above. It serves as an end-to-end scenario where you will learn the technologies and processes you can use to create multiple solutions. 
+This solution uses an example of a retail organization that has multiple data sources, but it has many applications to the other industries listed above. It serves as an end-to-end scenario where you will learn the technologies and processes you can use to create multiple solutions. 
 
 <img style="height: 50;" src="../graphics/WWI-logo.png">
 
-[Wide World Importers](https://azure-scenarios-experience.azurewebsites.net/big-data.html) (WWI) is a traditional brick and mortar business with a long track record of success, generating profits through strong retail store sales of their unique offering of affordable products from around the world. They have a great training program for new employees, that focuses on connecting with their customers and providing great face-to-face customer service. This strong focus on customer relationships has helped set WWI apart from their competitors. 
+<a href="https://azure-scenarios-experience.azurewebsites.net/big-data.html" target="_blank">Wide World Importers </a> (WWI) is a traditional brick and mortar business with a long track record of success, generating profits through strong retail store sales of their unique offering of affordable products from around the world. They have a great training program for new employees, that focuses on connecting with their customers and providing great face-to-face customer service. This strong focus on customer relationships has helped set WWI apart from their competitors. 
 
 WWI has now added web and mobile commerce to their platform, which has generated a significant amount of additional data, and data formats. These new platforms were added without integrating into the OLTP system data or Business Intelligence infrastructures. As a result, "silos" of data stores have developed.
 
@@ -140,11 +140,11 @@ Your output will look similar to this Power BI Report:
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Solution Review</b></p>
 
-In this activity, you will review the solution and ask pertinent questions about it's design.
+In this activity, you will review the solution and ask pertinent questions about its design.
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
 
-Understanding the Soltuion: List design choice questions
+Understanding the Solution: List design choice questions
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
@@ -157,13 +157,13 @@ Understanding the Soltuion: List design choice questions
 
 In this section you will learn more about the designs of two primary operating systems (Microsoft Windows and Linux) and how they are suited to working with Big Data. 
 
-<i>NOTE: This is not meant to be a comprehensive discussion of the merits of an operating system or ecostrcuture. The goal is to understand the salient features in each architecture as they pertain to processing large sets of data.</i>
+<i>NOTE: This is not meant to be a comprehensive discussion of the merits of an operating system or ecostrucuture. The goal is to understand the salient features in each architecture as they pertain to processing large sets of data.</i>
 
 When working with large-scale, distributed data processing systems, there are two primary concepts to keep in mind: You should move as much processing to the data location as possible, and the second is that the storage system should be abstracted so that the code does not have to determine where to get its data from each node. Both Windows and Linux have specific attributes to keep in mind as you select hardware, drivers, and configurations for your systems. 
 
 <h3>Storage</h3>
 
-The general rules for storage in a distributed data processing environment are that the disks should be as fast as possible, you should optimize for the best number of nodes that will store and process the data, and that the abstraction system (in the case of SQL Server BDC, this is HDFS in many casees) be at the latest version and optimized settings.
+The general rules for storage in a distributed data processing environment are that the disks should be as fast as possible, you should optimize for the best number of nodes that will store and process the data, and that the abstraction system (in the case of SQL Server BDC, this is HDFS in many cases) be at the latest version and optimized settings.
 
 For general concepts for Windows storage see the following resources:
 
@@ -195,7 +195,7 @@ Both Windows and Linux (in the x86 architecture) are Symmetric Multiprocessing s
 <h3>Memory</h3>
 
 Storage Nodes in a distributed processing system need a nominal amount of memory, and the processing nodes in the framework (Spark) included with SQL Server BDC need more.
-Both Linux and Windows suport large amounts of memory (most often as much as the system can hold) natively, and no special configuration for memory is needed.
+Both Linux and Windows support large amounts of memory (most often as much as the system can hold) natively, and no special configuration for memory is needed.
 
 Modern operating systems use a temporary area on storage to act as memory for light caching and also as being able to extend RAM memory. This should be avoided at all costs in both Windows and Linux.
 
@@ -223,7 +223,7 @@ The best way to learn an operating system is to install it and perform real-worl
   <tr><th style="background-color: #1b20a1; color: white;">Linux Concept</th> <th style="background-color: #1b20a1; color: white;">Description</th></tr>
 
   <tr><td><b><a href="https://www.howtogeek.com/117579/htg-explains-how-software-installation-package-managers-work-on-linux/" target="_blank">Distributions</a></b></td><td>Windows is written and controlled by Microsoft. Linux is comprised only of a small Kernel, and then all other parts of the operating system are created by commercial or the public, and packaged up into a <i>Distribution</i>. These Distributions have all of the complementary functions to the operating system, and in some cases a graphical interface and other files. The Distributions supported by SQL Server are RedHat, Ubuntu, and SuSE.</td></tr>
-  <tr><td><b><a href="https://www.howtogeek.com/117579/htg-explains-how-software-installation-package-managers-work-on-linux/" target="_blank">Package Managers</a></b></td><td>Software installation on Linux can be done manually by copying files or compiling source code. A Package Manager is a tool that simpilifies this process, and is based on the Distribution. The two package managers you will see most often in SQL Server are <b>yum</b> and <b>apt</b>.</td></tr>
+  <tr><td><b><a href="https://www.howtogeek.com/117579/htg-explains-how-software-installation-package-managers-work-on-linux/" target="_blank">Package Managers</a></b></td><td>Software installation on Linux can be done manually by copying files or compiling source code. A Package Manager is a tool that simplifies this process, and is based on the Distribution. The two package managers you will see most often in SQL Server are <b>yum</b> and <b>apt</b>.</td></tr>
   <tr><td><b><a href="https://www.cardinalpath.com/forecasting-with-machine-learning-techniques/" target="_blank">File Systems</a></b></td><td>Like Windows, organized as a tree, but referenced by a forward-slash <b>/</b>. There are no drive letters in Linux - everything is "mounted" to what looks like a directory.</td></tr>
   <tr><td><b><a href="https://www.cardinalpath.com/forecasting-with-machine-learning-techniques/" target="_blank">Access and Authentication</a></b></td><td>Users and Groups are stored in protected files, called <b>/etc/passwd</b> and <b>/etc/group</b>. These files and locations may be augmented or slightly different based in the distribution. By default, each user has very low privileges and must be granted access to files or directories. The <b>sudo</b> command allows you to run as a privileged user (known as root) or as another user.</td></tr>
 
@@ -250,7 +250,7 @@ The essential commands you should know for this workshop are below. In Linux you
   <tr><td><b><a href="http://www.linfo.org/mkdir.html" target="_blank">mkdir</a></b></td><td>Create a new directory dirname. Same as in Windows.</td></tr>
   <tr><td><b><a href="https://www.lifewire.com/what-to-know-more-command-4051953" target="_blank">more</a></b></td><td>Display data in paginated form. Same as in Windows. An improved version of this command is <a href="https://www.lifewire.com/what-to-know-less-command-4051972" target="_blank">less</a>.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/mount.html" target="_blank">mount</a></b></td><td>Makes a drive, network location, and many other objects available to the operating system so that you can work with it.</td></tr>
-  <tr><td><b><a href="http://www.linfo.org/mv.html" target="_blank">mv</a></b></td><td>Move (Rename) a oldname to newname. Similar to <b>REN</b> and <b>DEL</b> combined in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/mv.html" target="_blank">mv</a></b></td><td>Move (Rename) an oldname to newname. Similar to <b>REN</b> and <b>DEL</b> combined in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/pwd.html" target="_blank">pwd</a></b></td><td>Print current working directory.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/rm.html" target="_blank">rm</a></b></td><td>Remove (Delete) filename. Similar to <b>DEL</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/rmdir.html" target="_blank">rmdir</a></b></td><td>Delete an existing directory provided it is empty. Same as in Windows.</td></tr>  
@@ -277,7 +277,7 @@ https://www.tutorialspoint.com/unix_terminal_online.php
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-4">1.4 Big Data Technologies: Containers and Controlllers</a></h2>
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-4">1.4 Big Data Technologies: Containers and Controllers</a></h2>
 
 Bare-metal installations of an operating system such as Windows are deployed on hardware using a <i>Kernel</i>, and additional software to bring all of the hardware into a set of calls. One abstraction layer above installing software directly on hardware is using a <i>Hypervisor</i>. In essence, this layer uses the base operating system to emulate hardware. You install an operating system (called a *Guest* OS) on the Hypervisor (called the *Host*), and the Guest OS acts as if it is on bare-metal.
 
@@ -303,9 +303,9 @@ A Docker Container is provided by the Docker runtime engine, which sits above th
 
 <br>
 
-This abstraction holds everything for an application to isolate it from other running processes. It is also completely portable - you can create an image on one system, and another system can run it so long as the Docker Runtime is installed. Containers also start very quickly, are easy to create (called <i>Composing</i>) using a simple text file with instuctions of what to install on the image. The instructions pull the base Kernel, and then any binaries you want to install. Several pre-built Containers are already available, SQL Server is one of these. <a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017" target="_blank">You can read more about installing SQL Server on Docker here</a>.
+This abstraction holds everything for an application to isolate it from other running processes. It is also completely portable - you can create an image on one system, and another system can run it so long as the Docker Runtime is installed. Containers also start very quickly, are easy to create (called <i>Composing</i>) using a simple text file with instructions of what to install on the image. The instructions pull the base Kernel, and then any binaries you want to install. Several pre-built Containers are already available, SQL Server is one of these. <a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017" target="_blank">You can read more about installing SQL Server on Docker here</a>.
 
-You can have several Containers running at any one time, based on the amount of hardware resources where you run it. For scale-out systems, a Container allows for distribution and control of complete applications using only declaritive commands.
+You can have several Containers running at any one time, based on the amount of hardware resources where you run it. For scale-out systems, a Container allows for distribution and control of complete applications using only declarative commands.
 
 <h3>Container Orchestration <i>(Kubernetes)</i></h3>
 
@@ -356,7 +356,7 @@ For large scale-out data systems, the mounting point for an I/O is another abstr
 
 With an abstraction such as Containers, storage becomes an issue for two reasons: The storage can disappear when the Container is removed, and other Containers and technologies can't access storage easily within a Container. 
 
-To solve this, Kunbernetes implements the concept of <a href="https://docs.docker.com/engine/admin/volumes/" target="_blank">Volumes</a>, and <a href="https://kubernetes.io/docs/concepts/storage/volumes/" target="_blank">Kubernetes extended this concept</a>. Using <a href="https://github.com/kubernetes/examples/blob/master/staging/volumes/azure_disk/README.md" target="_blank">a specific protocol and command, Kubernetes (and in specific, SQL Server BDC) mounts the storage as a *Persistent Volume* and uses a construct called a *Persistent Volume Claim* to access it</a>. A Kubernetes Volume is a mounted directory which is accessible to the Containers in a Pod.
+To solve this, Docker implements the concept of <a href="https://docs.docker.com/engine/admin/volumes/" target="_blank">Volumes</a>, and <a href="https://kubernetes.io/docs/concepts/storage/volumes/" target="_blank">Kubernetes extended this concept</a>. Using <a href="https://github.com/kubernetes/examples/blob/master/staging/volumes/azure_disk/README.md" target="_blank">a specific protocol and command, Kubernetes (and in specific, SQL Server BDC) mounts the storage as a *Persistent Volume* and uses a construct called a *Persistent Volume Claim* to access it</a>. A Kubernetes Volume is a mounted directory which is accessible to the Containers in a Pod.
 
 You'll cover Volumes in more depth in a future module as you learn how the SQL Server BDC takes advantage of these constructs.
 
@@ -484,7 +484,7 @@ https://docs.microsoft.com/en-us/sql/relational-databases/polybase/polybase-quer
 
 Since HDFS is a file-system, data transfer is largely a matter of where it resides. If your HDFS mount-point is on-premises, you can use multiple tools to copy or transfer data to it, even including mounting it in Linux as a file system. There is also a Network File System (NFS) <a href="https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-hdfs/HdfsNfsGateway.html" target=_blank">gateway you can install to access the HDFS mount point</a>. 
 
-There is also a <a href="https://github.com/EDS-APHP/py-hdfs-mount" target="_blank">set of Python code that uses Fuse to mount HDFS, allowing you to access the mount point programatically</a>. 
+There is also a <a href="https://github.com/EDS-APHP/py-hdfs-mount" target="_blank">set of Python code that uses Fuse to mount HDFS, allowing you to access the mount point programmatically</a>. 
 
 If the HDFS is located in the cloud, each provider has methods for accessing that data. Microsoft Azure has multiple ways of hosting HDFS, and a common method of transferring data to almost any location within Azure is using <a href="https://docs.microsoft.com/en-us/azure/data-factory/v1/data-factory-create-datasets" target="_blank">Azure Data Factory</a>.
 
