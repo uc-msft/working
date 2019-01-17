@@ -466,7 +466,7 @@ In addition, you can create complex "Pipelines" of data ingress using Apache Spa
 
 The first considerations for loading data are source-data locality and network bandwidth, utilization, and predictability of the path to the SQL Server BDC destination. Depending on where the data originates, network bandwidth will play a major part in your loading performance. For source data residing on premises, network throughput performance and predictability can be enhanced with a service such as a dedicated network path or "hot potato routing". You must consider the current average bandwidth, utilization, predictability, and maximum capabilities of your current public Internet-facing, source-to-destination route, regardless of the method you are using.
 
-<h3>Data Ingestion <i>(PolyBase and HDFS)</i></h3>
+<h3>Data Ingestion <i>(SQL Server and HDFS)</i></h3>
 
 In this section you'll learn more about working with the last two options for loading data into the SQL Server BDC architecture. In the *Operationalization* module you'll learn more about Data Virtualization, and also see a practical method for working with data ingestion and pipelines.
 
