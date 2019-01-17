@@ -68,7 +68,7 @@ When you access that site, put the words **Purpose: SQL Bits 2019 Workshop** in 
 You will use these credentials in a subsequent step. It can take up to a week to receive your code. 
 
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 2: Prepare Your Workstation</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 3: Prepare Your Workstation</b></p>
 <br>
 The instructions that follow are the same for either a "base metal" workstation or laptop, or a Virtual Machine. It's best to have at least 4MB or RAM on the management system, and these instructions assume that you are not planning to run the database server or any Containers on the workstation. It's also assumed that you are using a current version of Windows, either desktop or server.
 <br>
@@ -116,7 +116,7 @@ The variables for **name**, **password** and **e-mail** for the Big Data Cluster
 
 *(Note that in production, you'll set these environment variables permanently using the Control Panel or by adding them with a Registry command, and may be handled by an improved installation experience)*
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 3: Install Azure CLI</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 4: Install Azure CLI</b></p>
 
 The Azure Command Line Utility is used to set up and control Azure resources. Run the following commands in your elevated PowerShell window:
 
@@ -129,7 +129,7 @@ pause
 
 You'll need to click the MSI file once it downloads, take all defaults. 
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 4: Install Python 3, pip3 and git</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 5: Install Python 3, pip3 and git</b></p>
 
 While `git` has not been mentioned as a requirement for SQL Server, it's used for the workshop. 
 
@@ -147,7 +147,7 @@ pause
 
 </pre>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 5: Install kubectl</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 6: Install kubectl</b></p>
 
 The `kubectl` program is used to deploy, configure and manage Kubernetes Clusters. It is used in several parts of the Big Data Clusters program.
 
@@ -158,7 +158,7 @@ choco install kubernetes-cli
 pause
 </pre>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 6: Install mssqlctl</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 7: Install mssqlctl</b></p>
 
 the `mssqlctl` program then deploys the SQL Server Big Data Cluster environment onto Kubernetes. 
 
@@ -169,7 +169,7 @@ C:\Python37\Scripts\pip3 install --extra-index-url https://private-repo.microsof
 pause
 </pre>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 7: Install Azure Data Studio and Extensions</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 8: Install Azure Data Studio and Extensions</b></p>
 
 The primary management tool for working with SQL Server Big Data Clusters is Azure Data Studio. You will also use this tool in your workshop.
 
