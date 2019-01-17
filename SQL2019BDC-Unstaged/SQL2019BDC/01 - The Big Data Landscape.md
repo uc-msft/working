@@ -157,9 +157,9 @@ Understanding the Solution: List design choice questions
 
 In this section you will learn more about the designs of two primary operating systems (Microsoft Windows and Linux) and how they are suited to working with Big Data. 
 
-<i>NOTE: This is not meant to be a comprehensive discussion of the merits of an operating system or ecostrucuture. The goal is to understand the salient features in each architecture as they pertain to processing large sets of data.</i>
+<i>NOTE: This is not meant to be a comprehensive discussion of the merits of an operating system or ecostructure. The goal is to understand the salient features in each architecture as they pertain to processing large sets of data.</i>
 
-When working with large-scale, distributed data processing systems, there are two primary concepts to keep in mind: You should move as much processing to the data location as possible, and the second is that the storage system should be abstracted so that the code does not have to determine where to get its data from each node. Both Windows and Linux have specific attributes to keep in mind as you select hardware, drivers, and configurations for your systems. 
+When working with large-scale, distributed data processing systems, there are two primary concepts to keep in mind: You should move as much processing to the data location as possible, and the storage system should be abstracted so that the code does not have to determine where to get its data from each node. Both Windows and Linux have specific attributes to keep in mind as you select hardware, drivers, and configurations for your systems. 
 
 <h3>Storage</h3>
 
@@ -239,7 +239,7 @@ The essential commands you should know for this workshop are below. In Linux you
   <tr><td><b><a href="http://www.linfo.org/cat.html" target="_blank">cat</a></b></td><td>Display File Contents. Similar to <b>TYPE</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/cd.html" target="_blank">cd</a></b></td><td>Changes Directory. Same as in Windows.</td></tr>
   <tr><td><b><a href="https://linux.die.net/man/1/chgrp" target="_blank">chgrp</a></b></td><td>Change file group access.</td></tr>
-  <tr><td><b><a href="https://linux.die.net/man/1/chmod" target="_blank">chmod</a></b></td><td>Change permissions. Similar to <b>CACLS</b> in Windows.</td></tr>
+  <tr><td><b><a href="http://www.linfo.org/chown.html" target="_blank">chown</a></b></td><td>Change permissions. Similar to <b>CACLS</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/cp.html" target="_blank">cp</a></b></td><td>Copy source file into destination. Similar to <b>COPY</b> in Windows.</td></tr>
   <tr><td><b><a href="http://www.linfo.org/file.html" target="_blank">file</a></b></td><td>Determine file type.</td></tr>
   <tr><td><b><a href="https://linux.die.net/man/1/find" target="_blank">find</a></b></td><td>Find files. Similar to <b>DIR filename /S</b> in Windows.</td></tr>
@@ -293,7 +293,7 @@ In this abstraction level, you have full control (and responsibility) for the en
 
 The next level of Abstraction is a <i>Container</i>. There are various types of Container technologies, in this workshop, you will focus on <a href="https://docs.docker.com" target="_blank">Docker</a>.
 
-A Docker Container is provided by the Docker runtime engine, which sits above the operating system (Windows or Linux). In this abstraction, you do not control the hardware <i>or</i> the operating system. The Container has a very small Kernel in it, and can binaries such as Python, R, SQL Server, or other binaries. A Container with all its binaries is called an <i>Image</i>. 
+A Docker Container is provided by the Docker runtime engine, which sits above the operating system (Windows or Linux). In this abstraction, you do not control the hardware <i>or</i> the operating system. The Container has a very small Kernel in it, and can contain binaries such as Python, R, SQL Server, or other binaries. A Container with all its binaries is called an <i>Image</i>. 
 
 <i>(NOTE: The Container Image Kernel can run on Windows or Linux, but you will focus on the Linux Kernel Containers in this workshop.)</i>
 
@@ -356,7 +356,7 @@ For large scale-out data systems, the mounting point for an I/O is another abstr
 
 With an abstraction such as Containers, storage becomes an issue for two reasons: The storage can disappear when the Container is removed, and other Containers and technologies can't access storage easily within a Container. 
 
-To solve this, Docker implements the concept of <a href="https://docs.docker.com/engine/admin/volumes/" target="_blank">Volumes</a>, and <a href="https://kubernetes.io/docs/concepts/storage/volumes/" target="_blank">Kubernetes extended this concept</a>. Using <a href="https://github.com/kubernetes/examples/blob/master/staging/volumes/azure_disk/README.md" target="_blank">a specific protocol and command, Kubernetes (and in specific, SQL Server BDC) mounts the storage as a *Persistent Volume* and uses a construct called a *Persistent Volume Claim* to access it</a>. A Kubernetes Volume is a mounted directory which is accessible to the Containers in a Pod.
+To solve this, Docker implemented the concept of <a href="https://docs.docker.com/engine/admin/volumes/" target="_blank">Volumes</a>, and <a href="https://kubernetes.io/docs/concepts/storage/volumes/" target="_blank">Kubernetes extended this concept</a>. Using <a href="https://github.com/kubernetes/examples/blob/master/staging/volumes/azure_disk/README.md" target="_blank">a specific protocol and command, Kubernetes (and in specific, SQL Server BDC) mounts the storage as a *Persistent Volume* and uses a construct called a *Persistent Volume Claim* to access it</a>. A Kubernetes Volume is a mounted directory which is accessible to the Containers in a Pod.
 
 You'll cover Volumes in more depth in a future module as you learn how the SQL Server BDC takes advantage of these constructs.
 
