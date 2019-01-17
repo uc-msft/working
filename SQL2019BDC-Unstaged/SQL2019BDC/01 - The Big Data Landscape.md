@@ -388,10 +388,6 @@ There are three primary tools and utilities you will use to control the SQL Serv
 
 The **kubectl** command accesses the Application Programming Interfaces (API's) from Kubernetes. The utility <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_blank">can be installed your workstation using this process</a>, and it is also available in the <a href="https://azure.microsoft.com/en-us/features/cloud-shell/" target="_blank">Azure Cloud Shell with no installation</a>. 
 
-<br>
-<img style="height: 200;" src="../graphics/kubectl.png"> 
-<br>
-
 A <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank">full list of the **kubectl** commands is here</a>. You can <a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/cluster-troubleshooting-commands?view=sqlallproducts-allversions 
 " target="_blank">use these commands for troubleshooting the SQL Server BDC as well</a>. 
  
@@ -412,15 +408,7 @@ You'll explore further operations with these tools in the <i>Management and Moni
 
 <h4>Jupyter Notebooks</h4>
 
-Jupyter *Notebooks* are a web-page-based interface consisting of Cells that can contain text (using the Markdown specification) or code. The code depends on the Kernel that has been installed for the Notebook. Traditionally, Python and R Kernels are installed by default. 
-
-*Notebook Servers* run **.ipynb** files (the Notebooks). You can install a Notebook Server locally, remotely, or you can use something like Azure Notebooks which provides a quick, easy way to work with and share Notebooks. (It's all a bit like a specific kind of web server). 
-
-*Libraries* are a container on your Notebook server where you can have Notebooks, code, directories and other files.
-
-Notebooks are JSON files that contain areas called *Cells*, which have text or code in them. When you double-click a Notebook, the Notebook server renders and can display text or run code, such as R or Python, using a Kernel.
-
-Cells can hold text (such as *Markdown*, *HTML*, or *LaTeX*) which you can mix together, or Code. Double-click a Cell in a Notebook to edit it, and then click the "Run" button to render what you typed. Code runs and displays an output below the cell. You can toggle the result for code to show or hide it.
+A Jupyter *Notebook* is a web-page-based interface consisting of Cells that can contain text (using the Markdown specification) or code. The code depends on the Kernel that has been installed for the Notebook. Traditionally, Python and R Kernels are installed by default. *Notebook Servers* run **.ipynb** files (the Notebooks). You can install a Notebook Server locally, remotely, or you can use something like <a href="https://notebooks.azure.com" target="_blank">Azure Notebooks</a> which provides a free, quick, easy way to work with and share Notebooks. (It's all a bit like a specific kind of web server). *Libraries* are a container on your Notebook server where you can have Notebooks, code, directories and other files. Notebooks are JSON files that contain areas called *Cells*, which have text or code in them. When you double-click a Notebook, the Notebook server renders and can display text or run code, such as R or Python, using a Kernel. Cells can hold text (such as *Markdown*, *HTML*, or *LaTeX*) which you can mix together, or Code. Double-click a Cell in a Notebook to edit it, and then click the "Run" button to render what you typed. Code runs and displays an output below the cell. You can toggle the result for code to show or hide it.
 
 *Markdown* is a simplified markup language for text. Use it for general text and simple graphics. You can <a href="https://www.markdowntutorial.com/" target="_blank">read more about Markdown here</a>, and <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">there's a great cheat-sheet on Markdown here</a>. 
 
@@ -443,7 +431,6 @@ You can <a href="https://docs.microsoft.com/en-us/sql/azure-data-studio/what-is?
 You'll explore further operations with the Azure Data Studio in the <i>Operationalization</i> module.
 
 <br>
-
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
 
 TODO: Activity Description and tasks
@@ -507,18 +494,15 @@ A <a href="https://docs.microsoft.com/en-us/azure/data-factory/introduction" tar
 <p><img style="height: 300; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/spark3.png"></p> 	 	
 <br>
 
-While Spark is used for all phases of the data processing lifecycle and can compliment and extend the capabilities of SQL Server, it is also <a href="https://www.perfomatix.com/building-real-time-data-pipeline-using-apache-spark/" target="_blank">often used to ingest and transform data as a data pipeline.
+While Spark is used for all phases of the data processing lifecycle and can compliment and extend the capabilities of SQL Server, it is also <a href="https://www.perfomatix.com/building-real-time-data-pipeline-using-apache-spark/" target="_blank">often used to ingest and transform data as a data pipeline</a>. An important concept to keep in mind when you ingest data using Spark is that Spark has three main data storage representations it works with once they are ingested:
 
-https://databricks.com/blog/2016/01/04/introducing-apache-spark-datasets.html - 
+ - RDD (2011): Distribution of JVM objects, Functional Operators (map, filter, etc)
+ - DataFrame (2013): Distribution of Row objects, Expression-based operations and UDF’s, Logical plans and an optimizer, Fast, efficient internal representations
+ - Dataset (2015): Internally rows, externally JVM objects – type-safe + fast, Slower than DF’s, not as suited for interactive analysis 
 
-RDD (2011): Distribution of JVM objects, Functional Operators (map, filter, etc)
-DataFrame (2013): Distribution of Row objects, Expression-based operations and UDF’s, Logical plans and an optimizer, Fast, efficient internal representations
-Dataset (2015): Internally rows, externally JVM objects – type-safe + fast, Slower than DF’s, not as suited for interactive analysis 
+<a href="https://databricks.com/blog/2016/01/04/introducing-apache-spark-datasets.html" target="_blank">You can learn more about these data representations here</a>. You'll see an example of ingesting data using Apache Spark in the <i>Operationalization</i> module.
 
-
-You'll see an example of ingesting data using Apache Spark in the <i>Operationalization</i> module.
-
-
+<br>
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
 
 TODO: Activity Description and tasks
