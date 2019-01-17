@@ -388,10 +388,6 @@ There are three primary tools and utilities you will use to control the SQL Serv
 
 The **kubectl** command accesses the Application Programming Interfaces (API's) from Kubernetes. The utility <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_blank">can be installed your workstation using this process</a>, and it is also available in the <a href="https://azure.microsoft.com/en-us/features/cloud-shell/" target="_blank">Azure Cloud Shell with no installation</a>. 
 
-<br>
-<img style="height: 200;" src="../graphics/kubectl.png"> 
-<br>
-
 A <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank">full list of the **kubectl** commands is here</a>. You can <a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/cluster-troubleshooting-commands?view=sqlallproducts-allversions 
 " target="_blank">use these commands for troubleshooting the SQL Server BDC as well</a>. 
  
@@ -412,15 +408,7 @@ You'll explore further operations with these tools in the <i>Management and Moni
 
 <h4>Jupyter Notebooks</h4>
 
-Jupyter *Notebooks* are a web-page-based interface consisting of Cells that can contain text (using the Markdown specification) or code. The code depends on the Kernel that has been installed for the Notebook. Traditionally, Python and R Kernels are installed by default. 
-
-*Notebook Servers* run **.ipynb** files (the Notebooks). You can install a Notebook Server locally, remotely, or you can use something like Azure Notebooks which provides a quick, easy way to work with and share Notebooks. (It's all a bit like a specific kind of web server). 
-
-*Libraries* are a container on your Notebook server where you can have Notebooks, code, directories and other files.
-
-Notebooks are JSON files that contain areas called *Cells*, which have text or code in them. When you double-click a Notebook, the Notebook server renders and can display text or run code, such as R or Python, using a Kernel.
-
-Cells can hold text (such as *Markdown*, *HTML*, or *LaTeX*) which you can mix together, or Code. Double-click a Cell in a Notebook to edit it, and then click the "Run" button to render what you typed. Code runs and displays an output below the cell. You can toggle the result for code to show or hide it.
+A Jupyter *Notebook* is a web-page-based interface consisting of Cells that can contain text (using the Markdown specification) or code. The code depends on the Kernel that has been installed for the Notebook. Traditionally, Python and R Kernels are installed by default. *Notebook Servers* run **.ipynb** files (the Notebooks). You can install a Notebook Server locally, remotely, or you can use something like <a href="https://notebooks.azure.com" target="_blank">Azure Notebooks</a> which provides a free, quick, easy way to work with and share Notebooks. (It's all a bit like a specific kind of web server). *Libraries* are a container on your Notebook server where you can have Notebooks, code, directories and other files. Notebooks are JSON files that contain areas called *Cells*, which have text or code in them. When you double-click a Notebook, the Notebook server renders and can display text or run code, such as R or Python, using a Kernel. Cells can hold text (such as *Markdown*, *HTML*, or *LaTeX*) which you can mix together, or Code. Double-click a Cell in a Notebook to edit it, and then click the "Run" button to render what you typed. Code runs and displays an output below the cell. You can toggle the result for code to show or hide it.
 
 *Markdown* is a simplified markup language for text. Use it for general text and simple graphics. You can <a href="https://www.markdowntutorial.com/" target="_blank">read more about Markdown here</a>, and <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">there's a great cheat-sheet on Markdown here</a>. 
 
@@ -443,7 +431,6 @@ You can <a href="https://docs.microsoft.com/en-us/sql/azure-data-studio/what-is?
 You'll explore further operations with the Azure Data Studio in the <i>Operationalization</i> module.
 
 <br>
-
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
 
 TODO: Activity Description and tasks
@@ -456,82 +443,66 @@ https://notebooks.azure.com/BuckWoodyNoteBooks/projects/AzureNotebooks
 
 In any large data system, you will need a way to bring the data in. In some cases, you will edit the data either on the way in, or after it is staged using a process called "Extract, Transform and Load" (ETL) or leave the data "pure" and unaltered (common in Data Science projects), using a process called "Extract, Load and Transform" (ELT). 
 
-In SQL Server Big Data Clusters, you'll learn about three ways that the system interacts with data:
+In SQL Server Big Data Clusters, you'll learn about three ways that the system interacts with large sets of data:
 
  - "Virtualize" the data by pushing down the query to the source system (no data is ingested in this scenario)
  - Ingesting data into SQL Server Tables, using the PolyBase feature or into standard SQL Server constructs
  - Loading data into HDFS
 
-In addition, you can create complex "Pipelines" of data ingress using Apache Spark.
+In Data Virtualization, no data is brought into storage - it is queried from it's source. It's important to think about the network bandwidth per query in this scenario. The next two scenarios do bring data into the system, either into SQL Server tables within the Big Data Cluster or into the HDFS mount points.
 
-The first considerations for loading data are source-data locality and network bandwidth, utilization, and predictability of the path to the SQL Server BDC destination. Depending on where the data originates, network bandwidth will play a major part in your loading performance. For source data residing on premises, network throughput performance and predictability can be enhanced with a service such as a dedicated network path or "hot potato routing". You must consider the current average bandwidth, utilization, predictability, and maximum capabilities of your current public Internet-facing, source-to-destination route, regardless of the method you are using.
+In both cases, the first considerations for loading data are source-data locality and network bandwidth, utilization, and predictability of the path to the SQL Server BDC destination. Depending on where the data originates, network bandwidth will play a major part in your loading performance. For source data residing on premises, network throughput performance and predictability can be enhanced with a service such as a dedicated network path or "hot potato routing". You must consider the current average bandwidth, utilization, predictability, and maximum capabilities of your current public Internet-facing, source-to-destination route, regardless of the method you are using.
 
-<h3>Data Ingestion <i>(SQL Server and HDFS)</i></h3>
+In this section you'll learn more about working with the last two options for loading data into the SQL Server BDC architecture. In the *Operationalization* module you'll learn more about Data Virtualization, and also see a practical method for working with data ingestion and pipelines. You can use multiple methods to control the pipeline or workflow of your system, depending on the requirements and other parts of the Data Architecture at your location. In general, <a href="https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/overview" target="_blank">you will use the Team Data Science Process</a> to define your objectives, identify and explore data sources, perform any transforms and do any Feature Engineering for Machine Learning, and then Operationalize your solution. 
 
-In this section you'll learn more about working with the last two options for loading data into the SQL Server BDC architecture. In the *Operationalization* module you'll learn more about Data Virtualization, and also see a practical method for working with data ingestion and pipelines.
+Next you'll explore the two locations you can store data in the system, and then you'll learn about creating a Pipeline system to standardize and automate the process. In the <i>Operationalization</i> Module you'll see practical examples of each of these. 
 
-<h4>Data Ingestion for SQL Server and PolyBase</h4>
+<h3>Data Ingestion for SQL Server Data Stores</h3>
 
-For SQL Server tables (regardless of structure), standard ingestion methods work well: The bcp utility, SQL Server Integration Services, and SQLBulkCopy. 
+For SQL Server tables (regardless of structure), standard ingestion methods work well: 
 
-TODO: POLYBASE
+ - <a href="https://docs.microsoft.com/en-us/sql/tools/bcp-utility?view=sql-server-ver15" target="_blank">The bcp utility</a>
+ - <a href="https://docs.microsoft.com/en-us/sql/integration-services/sql-server-integration-services?view=sql-server-ver15" target="_blank">SQL Server Integration Services</a>
+ - <a href="https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/bulk-copy-operations-in-sql-server" target="_blank">The SQLBulkCopy class in ADO.NET</a>
 
-https://docs.microsoft.com/en-us/azure/data-factory/v1/data-factory-introduction 
+In the case of PolyBase, statements can not only <a href="https://docs.microsoft.com/en-us/sql/relational-databases/polybase/data-virtualization?toc=%2fsql%2fbig-data-cluster%2ftoc.json&view=sqlallproducts-allversions" target="_blank">query data</a> from various sources, <a href="https://docs.microsoft.com/en-us/sql/relational-databases/polybase/polybase-queries?view=sql-server-2017#import-data" target="_blank">but also persist them in SQL Server physical tables</a>. 
 
-https://docs.microsoft.com/en-us/sql/relational-databases/polybase/polybase-queries?view=sql-server-2017#import-data 
+<h3>Data Ingestion for HDFS</h3>
 
-<h4>Data Ingestion for HDFS</h4>
+Since HDFS is a file-system, data transfer is largely a matter of using it as a mount-point. The following methods are generally used, although the platform and location of the HDFS system affects the choices available:
 
-Since HDFS is a file-system, data transfer is largely a matter of where it resides. If your HDFS mount-point is on-premises, you can use multiple tools to copy or transfer data to it, even including mounting it in Linux as a file system. There is also a Network File System (NFS) <a href="https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-hdfs/HdfsNfsGateway.html" target="_blank"> gateway you can install to access the HDFS mount point</a>. 
+ - If your HDFS mount-point is on-premises, you can use multiple tools to copy or transfer data to it, <a href="https://github.com/Microsoft/hdfs-mount" target="_blank">including mounting it in Linux as a file system</a> 
+ - There is also a Network File System (NFS) <a href="https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-hdfs/HdfsNfsGateway.html" target="_blank">gateway you can install to access the HDFS mount point</a>
+ - <a href="https://github.com/EDS-APHP/py-hdfs-mount" target="_blank">Python code use the Fuse library to mount HDFS, allowing you to access the mount point programmatically</a>. 
+ - If the HDFS is located in the cloud, each provider has methods for accessing that data. Microsoft Azure has multiple ways of hosting HDFS, and a common method of transferring data to almost any location within Azure is using <a href="https://docs.microsoft.com/en-us/azure/data-factory/v1/data-factory-create-datasets" target="_blank">Azure Data Factory</a>.
 
-There is also a <a href="https://github.com/EDS-APHP/py-hdfs-mount" target="_blank">set of Python code that uses Fuse to mount HDFS, allowing you to access the mount point programmatically</a>. 
+<h3>Data Pipelines using <i>Azure Data Factory</i></h3>
 
-If the HDFS is located in the cloud, each provider has methods for accessing that data. Microsoft Azure has multiple ways of hosting HDFS, and a common method of transferring data to almost any location within Azure is using <a href="https://docs.microsoft.com/en-us/azure/data-factory/v1/data-factory-create-datasets" target="_blank">Azure Data Factory</a>.
-
-<br>
-<img style="height: 300;" src="../graphics/adf.png"> 
-<br>
-
-You'll see an example of ingesting data using HDFS and PolyBase in the <i>Operationalization</i> module.
-
-<br>
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
-<br>
-
-TODO: Enter activity description with checkbox
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
-
-<h3>Data Pipelines <i>(<a name="1-7">Apache Spark</a>)</i></h3>
-TODO: Topic Description
-
-https://www.kdnuggets.com/2019/01/practical-apache-spark-10-minutes.html 
-
+As described earlier, you can use various methods to ingest data ad-hoc and as-needed for your two data targets (HDFS and SQL Server Tables. A more holistic archicture is to use a <i>Pipeline</i> system tht can define sources, triggers and events, transforms, targets, and has logging and tracking capabilities. The Microsoft Azure Data Factory provides all of the capabilities, and often serves as the mechanism to transfer data to and from on-premises, in-cloud, and other sources and targets. <a href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities" target="_blank">ADF can serve as a full data pipeline system, as described here</a>. 
 
 <br>
-<p><img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/spark2.png"></p> 	 	
+<img style="height: 75;" src="../graphics/adf.png"> 
 <br>
 
+A <a href="https://docs.microsoft.com/en-us/azure/data-factory/introduction" target="_blank">full description of Azure Data Factory is here</a>.
+
+<h3>Data Pipelines using <i>Apache Spark</i></h3>
+
+<a href="https://spark.apache.org/" target="_blank">Apache Spark is an analytics engine</a> for large-scale data. It can be used with data stored in HDFS, and has connectors to work with data in SQL Server as well. 
+
 <br>
-<p><img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/spark3.png"></p> 	 	
+<p><img style="height: 300; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="../graphics/spark3.png"></p> 	 	
 <br>
 
+While Spark is used for all phases of the data processing lifecycle and can compliment and extend the capabilities of SQL Server, it is also <a href="https://www.perfomatix.com/building-real-time-data-pipeline-using-apache-spark/" target="_blank">often used to ingest and transform data as a data pipeline</a>. An important concept to keep in mind when you ingest data using Spark is that Spark has three main data storage representations it works with once they are ingested:
 
-https://databricks.com/blog/2016/01/04/introducing-apache-spark-datasets.html - 
+ - RDD (2011): Distribution of JVM objects, Functional Operators (map, filter, etc)
+ - DataFrame (2013): Distribution of Row objects, Expression-based operations and UDF’s, Logical plans and an optimizer, Fast, efficient internal representations
+ - Dataset (2015): Internally rows, externally JVM objects – type-safe + fast, Slower than DF’s, not as suited for interactive analysis 
 
-RDD (2011): Distribution of JVM objects, Functional Operators (map, filter, etc)
+<a href="https://databricks.com/blog/2016/01/04/introducing-apache-spark-datasets.html" target="_blank">You can learn more about these data representations here</a>. You'll see an example of ingesting data using Apache Spark in the <i>Operationalization</i> module.
 
-DataFrame (2013): Distribution of Row objects, Expression-based operations and UDF’s, Logical plans and an optimizer, Fast, efficient internal representations
-
-Dataset (2015): Internally rows, externally JVM objects – type-safe + fast, Slower than DF’s, not as suited for interactive analysis 
-
-
-You'll see an example of ingesting data using Apache Spark in the <i>Operationalization</i> module.
-
-
+<br>
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
 
 TODO: Activity Description and tasks
@@ -547,6 +518,8 @@ TODO: Enter activity steps description with checkbox
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
+<br>
+
 <ul>
     <li><a href = "https://www.simplilearn.com/data-science-vs-big-data-vs-data-analytics-article" target="_blank">Understanding the Big Data Landscape</a></li>
     <li><a href = "https://docs.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-2017" target="_blank">Wide World Importers Data Dictionary and company description</a></li>
@@ -557,7 +530,11 @@ TODO: Enter activity steps description with checkbox
     <li><a href = "." target="_blank">Azure Data Studio</a></li>
     <li><a href = "." target="_blank">Kubernetes Security</a></li>
     <li><a href = "." target="_blank">Data Ingestion into Azure Storage</a></li>
+
 </ul>
+
+https://www.kdnuggets.com/2019/01/practical-apache-spark-10-minutes.html 
+
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/geopin.png"><b >Next Steps</b></p>
 
