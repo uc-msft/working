@@ -76,15 +76,14 @@ The solution includes the following technologies - although you are not limited 
 
   <tr><th style="background-color: #1b20a1; color: white;">Technology</th> <th style="background-color: #1b20a1; color: white;">Description</th></tr>
 
-  <tr><td><i>Linux</i></td><td>Operating system used in Containers and Container management (Kubernetes)</td></tr>
-  <tr><td><i>git</i></td><td>Source control management system</td></tr>
-  <tr><td><i>Containers</i></td><td>Encapsulation level for the SQL Server Big Data Cluster architecture</td></tr>
-  <tr><td><i>Kubernetes</i></td><td>Management, control plane and security for Containers</td></tr>
+  <tr><td><i>Linux</i></td><td>Operating system used in Containers and Container Orchestration</td></tr>
+  <tr><td><i>Docker</i></td><td>Encapsulation level for the SQL Server Big Data Cluster architecture</td></tr>
+  <tr><td><i>Kubernetes</i></td><td>Management, control plane for Containers</td></tr>
   <tr><td>Microsoft Azure</td><td>Cloud environment for services</td></tr>
   <tr><td>Azure Container Service (AKS)</td><td>Kubernetes as a Service</td></tr>
   <tr><td><i>Apache HDFS</i></td><td>Scale-out storage subsystem</td></tr>
-  <tr><td><i>Apache Knox</i></td><td>The Knox Gateway provides a single access point for all REST and HTTP interactions with Apache Hadoop clusters, used for security </td></tr>
-  <tr><td><i>Apache Ranger</i></td><td>A centralized security framework for providing authorization and auditing of Hadoop components</td></tr>
+  <tr><td><i>Apache Knox</i></td><td>The Knox Gateway provides a single access point for all REST interactions, used for security</td></tr>
+  <tr><td><i>Apache Livy</i></td><td>Tob submission system for Apache Spark</td></tr>
   <tr><td><i>Apache Spark</i></td><td>In-memory large-scale, scale-out data processing architecture used by SQL Server </i></td></tr>
   <tr><td><i>Python, R, Java, SparkML</i></td><td><i>ML/AI programming languages used for Machine Learning and AI Model creation</i></td></tr>
   <tr><td>Azure Data Studio</td><td>Tooling for SQL Server, HDFS, Kubernetes cluster management, T-SQL, R, Python, and SparkML languages</td></tr>
