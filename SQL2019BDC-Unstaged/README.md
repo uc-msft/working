@@ -23,7 +23,7 @@
 
 Welcome to this Microsoft solutions workshop on *Microsoft SQL Server Big Data Clusters Architecture*. In this workshop, you'll learn how SQL Server big data clusters implements large-scale data processing and machine learning, and how to select and plan for the proper architecture to enable machine learning to train your models using Python, R, Java or SparkML to operationalize these models, and how to deploy your intelligent apps side-by-side with their data.
 
-The focus of this workshop is to understand how to deploy an on-premise, hybrid or local environment of a big data cluster, and understanding the components of the big data solution architecture.
+The focus of this workshop is to understand how to deploy an on-premise, hybrid or local environment of a big data cluster, and understand the components of the big data solution architecture.
 
 You'll start by understanding the concepts of big data analytics, and you'll get an overview of the technologies (such as containers, Kubernetes, Spark and HDFS, machine learning, and other technologies) that you will use throughout the workshop. Next, you'll understand the architecture of SQL Server Big Data Clusters. You'll learn how to create external tables over other data sources to unify your data, and how to use Spark to run big queries over your data in HDFS or do data preparation. You'll review a complete solution for an end-to-end scenario, with a focus on how to extrapolate what you have learned to create other solutions for your organization.
 
@@ -55,9 +55,9 @@ The goal of this workshop is to train the team tasked with architecting and impl
 
 The concepts and skills taught in this workshop form the starting points for:
 
-    Data Professionals and DevOps teams that will implement and operate a SQL Server Big Data Cluster system.
-    Solution Architects and Developers, to understand how to put together an end to end solution.
-    Data Scientists, to understand the environment used to analyze and solve specific predictive problems.
+  * Data Professionals and DevOps teams that will implement and operate a SQL Server Big Data Cluster system.
+  * Solution Architects and Developers, to understand how to put together an end to end solution.
+  * Data Scientists, to understand the environment used to analyze and solve specific predictive problems.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 <img style="float: left; margin: 0px 15px 15px 0px;" src="./graphics/building1.png"> <h2><a name="businessapplications">Business Applications of this Workshop</a></h2>
