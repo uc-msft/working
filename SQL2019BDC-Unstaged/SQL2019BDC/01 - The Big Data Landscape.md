@@ -22,7 +22,7 @@ You'll cover the following topics in this Module:
   <dt><a href="#1-4">1.4 Big Data Technologies: Containers and Controllers <i>(needs lab)</i></a></dt>
   <dt><a href="#1-5">1.5 Big Data Technologies: Distributed Data Storage <i>(needs lab)</i></a></dt>
   <dt><a href="#1-6">1.6 Big Data Technologies: Command and Control <i>(needs lab)</i></a></dt>
-  <dt><a href="#1-7">1.7 Big Data Technologies: Data Ingestion, Processing and Output (<i>needs PolyBase info, ADF, other ingress methods, Spark discussion, labs)</i></a></dt>
+  <dt><a href="#1-7">1.7 Big Data Technologies: Data Ingestion, Processing and Output <i>(needs labs, For Further Study link scrub)</i></a></dt>
 
 </dl>
 
@@ -408,7 +408,13 @@ You'll explore further operations with these tools in the <i>Management and Moni
 
 <h4>Jupyter Notebooks</h4>
 
-A Jupyter *Notebook* is a web-page-based interface consisting of Cells that can contain text (using the Markdown specification) or code. The code depends on the Kernel that has been installed for the Notebook. Traditionally, Python and R Kernels are installed by default. *Notebook Servers* run **.ipynb** files (the Notebooks). You can install a Notebook Server locally, remotely, or you can use something like <a href="https://notebooks.azure.com" target="_blank">Azure Notebooks</a> which provides a free, quick, easy way to work with and share Notebooks. (It's all a bit like a specific kind of web server). *Libraries* are a container on your Notebook server where you can have Notebooks, code, directories and other files. Notebooks are JSON files that contain areas called *Cells*, which have text or code in them. When you double-click a Notebook, the Notebook server renders and can display text or run code, such as R or Python, using a Kernel. Cells can hold text (such as *Markdown*, *HTML*, or *LaTeX*) which you can mix together, or Code. Double-click a Cell in a Notebook to edit it, and then click the "Run" button to render what you typed. Code runs and displays an output below the cell. You can toggle the result for code to show or hide it.
+A Jupyter *Notebook* is a web-page-based interface consisting of *Cells* that can contain text (using the Markdown specification) or code. The code depends on the Kernel that has been installed for the Notebook. Traditionally, Python and R Kernels are installed by default. 
+
+*Notebook Servers* run **.ipynb** files (the Notebooks). You can install a Notebook Server locally, remotely, or you can use something like <a href="https://notebooks.azure.com" target="_blank">Azure Notebooks</a> which provides a free, quick, easy way to work with and share Notebooks. (It's all a bit like a specific kind of web server). 
+
+*Libraries* are a container on your Notebook server where you can have Notebooks, code, directories and other files. 
+
+Notebooks are JSON files that contain areas called *Cells*, which have text or code in them. When you double-click a Notebook, the Notebook server renders and can display text or run code, such as R or Python, using a Kernel. Cells can hold text (such as *Markdown*, *HTML*, or *LaTeX*) which you can mix together, or Code. Double-click a Cell in a Notebook to edit it, and then click the "Run" button to render what you typed. Code runs and displays an output below the cell. You can toggle the result for code to show or hide it.
 
 *Markdown* is a simplified markup language for text. Use it for general text and simple graphics. You can <a href="https://www.markdowntutorial.com/" target="_blank">read more about Markdown here</a>, and <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">there's a great cheat-sheet on Markdown here</a>. 
 
