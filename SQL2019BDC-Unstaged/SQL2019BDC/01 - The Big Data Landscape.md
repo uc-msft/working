@@ -16,8 +16,8 @@ You'll cover the following topics in this Module:
 
 <dl>
 
-  <dt><a href="#1-1">1.1 Business Applications and Big Data <i>(complete)</i></a></dt>
-  <dt><a href="#1-2">1.2 Workshop Solution <i>(TODO needs updated to latest complete graphic)</i></a></dt>
+  <dt><a href="#1-1">1.1 Business Applications and Big Data</a></dt>
+  <dt><a href="#1-2">1.2 Workshop Scenario</a></dt>
   <dt><a href="#1-3">1.3 Big Data Technologies: Operating Systems <i>(needs lab)</i></a></dt>
   <dt><a href="#1-4">1.4 Big Data Technologies: Containers and Controllers <i>(needs lab)</i></a></dt>
   <dt><a href="#1-5">1.5 Big Data Technologies: Distributed Data Storage <i>(needs lab)</i></a></dt>
@@ -88,17 +88,17 @@ While you will review the design for a complete solution in this workshop, it ex
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2><a name="1-2"><a name="1-2">1.2 Workshop Solution</a></h2>
+<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2><a name="1-2"><a name="1-2">1.2 Workshop Scenario</a></h2>
 
 This solution uses an example of a retail organization that has multiple data sources, but it has many applications to the other industries listed above. It serves as an end-to-end scenario where you will learn the technologies and processes you can use to create multiple solutions. 
 
-<img style="height: 50;" src="../graphics/WWI-logo.png">
+<img style="height: 25;" src="../graphics/WWI-logo.png">
 
 <a href="https://azure-scenarios-experience.azurewebsites.net/big-data.html" target="_blank">Wide World Importers </a> (WWI) is a traditional brick and mortar business with a long track record of success, generating profits through strong retail store sales of their unique offering of affordable products from around the world. They have a great training program for new employees, that focuses on connecting with their customers and providing great face-to-face customer service. This strong focus on customer relationships has helped set WWI apart from their competitors. 
 
 WWI has now added web and mobile commerce to their platform, which has generated a significant amount of additional data, and data formats. These new platforms were added without integrating into the OLTP system data or Business Intelligence infrastructures. As a result, "silos" of data stores have developed.
 
-<img style="height: 200; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/WWI-001.png">
+<img style="height: 150; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/WWI-001.png">
 
 Now they want to expand their reach to customers around the world through web and mobile e-commerce. But they don't want to just simply make their inventory available online. They want to build upon their track record of strong customer connections, and engage with their customers through personalized, high-quality application experiences that incorporate data and intelligence.
 
@@ -106,12 +106,12 @@ The technology team at WWI has recognized that moving to an omni-channel strateg
 
  - Scale data systems to reach more consumers
  - Unlock business insights from multiple sources of structured and unstructured data
- - Apply real-time analytics for instant updates
- - Infuse AI into apps to actively engage with customers
+ - Apply deep analytics with high-performance responses
+ - Enable AI into apps to actively engage with customers
 
-Prior to expanding to our current omni-channel strategy, WWI had a simple Point of Sale (POS) application that handled customer orders at each retail store. The back-end was a series of service layers used to process orders and store them in a SQL database. They had designed their systems and tuned them to handle this level of data.
+Prior to expanding to their current omni-channel strategy, WWI had a simple Point of Sale (POS) application that handled customer orders at each retail store. The back-end was a series of service layers used to process orders and store them in a SQL database. They had designed their systems and tuned them to handle this level of data.
 
-<img style="height: 200; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/WWI-002.png">
+<img style="height: 150; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/WWI-002.png">
 
 As they added new e-commerce channels to expand the customer base, consumer demand also increased. This increased demand from more customers ordering products through more channels generated more data. Now WWI has new challenges to address:
 
@@ -121,36 +121,28 @@ As they added new e-commerce channels to expand the customer base, consumer dema
  - New development challenges resulting from more deployment targets and duplicated code
 
 <br>
-<img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/WWI-003.png">
+<img style="height: 300; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/WWI-003.png">
 <br>
 
+In the <i>04 - Operationalization</i> Module, you'll learn how the team solves each of these challenges.
+
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
-
-<h3>Solution</h3>
-
-<br>
-<img style="height: 200; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://docs.microsoft.com/en-us/sql/big-data-cluster/media/big-data-cluster-overview/ai-ml-spark.png">
 <br>
 
-Your output will look similar to this Power BI Report:
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b><a name="aks">Activity: Install Class Environment on AKS</a></b></p>
 
-<br>
-<img style="height: 200; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://azure-scenarios-experience.azurewebsites.net/media/big-data-advanced-analytics/power-bi.png">
-<br>
-
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Solution Review</b></p>
-
-In this activity, you will review the solution and ask pertinent questions about its design.
+In this lab you will deploy a SQL Server 2019 Big Data Cluster to the Azure Kubernetes Service. You will need a client machine and a subscription to Microsoft Azure where you can create assets.
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
 
-Understanding the Solution: List design choice questions
+Using the following steps, you will create a Resource Group in Azure that will hold your BDC on AKS. When you complete your lab you can delete this Resource Group which will stop the Azure charges for this course. 
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Review the scenario and the proposed solution.</p>
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Based on your current knowledge in each of the technologies shown, write down any questions you have (<i>What is this technology, how is it used, why was it selected, etc.</i>) in your personal workshop notes. You will return to these questions at the end of the workshop to see if you understand the choices, and if with your new knowledge, you agree with the design.</p>
-
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="00%20-%20Pre-Requisites.md" target="_blank">Ensure that you have completed all Pre-Requisites</a>.</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/quickstart-big-data-cluster-deploy?view=sqlallproducts-allversions" target="_blank">Read the following article, ensuring that you carefully follow each step</a>. Stop at the section marked <b>Connect to the cluster</b>.</p>
+ 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-3">1.3 Big Data Technologies: Operating Systems</a></h2>
