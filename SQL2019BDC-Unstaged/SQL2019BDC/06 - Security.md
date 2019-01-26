@@ -16,23 +16,38 @@ You'll cover the following topics in this Module:
 
 <dl>
 
-  <dt><a href="#6-0">6.0 Managing SQL Server Big Data Cluster Security <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
-  <dt><a href="#6-1">6.1 Access <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
-  <dt><a href="#6-2">6.2 Authentication <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
-  <dt><a href="#6-3">6.3 Authorization <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#6-0">6.0 Managing SQL Server Big Data Cluster Security <i>(needs labs)</i></a></dt>
+  <dt><a href="#6-1">6.1 Access <i>(needs labs)</i></a></dt>
+  <dt><a href="#6-2">6.2 Authentication and Autorization <i>(needs labs)</i></a></dt>
 
 </dl>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.1 TODO: Topic Name</h2>
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="6-0">6.0 Managing SQL Server Big Data Cluster Security</a></h2>
 
-TODO: Topic Description
+Authentication is the process of verifying the identity of a user or service and ensuring they are who they are claiming to be. Authorization refers to granting or denying of access to specific resources based on the requesting user's identity. This step is performed after a user is identified through authentication.
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="6-1">6.1 Access</a></h2>
+
+There are three endpoints for entry points to the big data cluster:
+
+<table>
+
+<tr><th style="background-color: #1b20a1; color: white;">Endpoint</th> <th style="background-color: #1b20a1; color: white;">Description</th></tr>
+
+  <tr><td>HDFS/Spark (Knox) gateway</td><td>An HTTPS-based endpoint that proxies other endpoints. The HDFS/Spark gateway is used for accessing services like webHDFS and Livy. Wherever you see references to Knox, this is the endpoint</td></tr>
+  <tr><td>Controller endpoint</td><td>The endpoint for the big data cluster management service that exposes REST APIs for managing the cluster. Some tools, such as the Admin portal, are also accessed through this endpoint</td></tr>
+  <tr><td>Master Instance</td><td>Get a detailed description of a specific pod in json format output. It includes details, such as the current Kubernetes node that the pod is placed on, the containers running within the pod, and the image used to bootstrap the containers. It also shows other details, such as labels, status, and persisted volumes claims that are associated with the pod</td></tr>
+  
+</table>
+
+You can see these endpoints in this diagram:
 
 <br>
-
 <img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://docs.microsoft.com/en-us/sql/big-data-cluster/media/concept-security/cluster_endpoints.png">
-
 <br>
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
@@ -49,9 +64,32 @@ TODO: Enter activity steps description with checkbox
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.2 TODO: Topic Name</h2>
 
-TODO: Topic Description
+<h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="6-2">6.2 Authentication and Authorization</a></h2>
+
+When you create the cluster, a number of logins are created. Some of these logins are for services to communicate with each other, and others are for end users to access the cluster.
+End-user passwords are set using environment variables. These are passwords that SQL administrators and cluster administrators use to access services:
+
+<table>
+
+<tr><th style="background-color: #1b20a1; color: white;">Use</th> <th style="background-color: #1b20a1; color: white;">Variable</th></tr>
+
+  <tr><td>Controller username</td><td><pre>CONTROLLER_USERNAME=controller_username</pre></td></tr>
+  <tr><td>Controller password</td><td><pre>CONTROLLER_PASSWORD=controller_password</pre></td></tr>
+  <tr><td>SQL Master SA password</td><td><pre>MSSQL_SA_PASSWORD=controller_sa_password</pre></td></tr>
+  <tr><td>Password for accessing the HDFS/Spark endpoint</td><td><pre>KNOX_PASSWORD=knox_password</pre></td></tr>
+  
+</table>
+
+
+Intra-cluster authentication
+Upon deployment of the cluster, a number of SQL logins are created:
+
+A special SQL login is created in the Controller SQL instance that is system managed, with sysadmin role. The password for this login is captured as a K8s secret. A sysadmin login is created in all SQL instances in the cluster, that Controller owns and manages. It is required for Controller to perform administrative tasks, such as HA setup or upgrade, on these instances. These logins are also used for intra-cluster communication between SQL instances, such as the SQL master instance communicating with a data pool.
+
+<i>Note: In current release, only basic authentication is supported. Fine-grained access control to HDFS objects, and SQL big data cluster compute and data pools, is not yet available.</i>
+
+For Intra-cluster communication with non-SQL services within the big data cluster, such as Livy to Spark or Spark to the storage pool, security uses certificates. All SQL Server to SQL Server communication is secured using SQL logins.
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
 

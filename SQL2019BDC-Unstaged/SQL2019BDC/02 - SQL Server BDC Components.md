@@ -172,10 +172,6 @@ The Data Pool in a SQL Server Big Data Cluster consists of one or more SQL Serve
 <img style="height: 200; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/datamart1.png">
 <br>
 
-<br>
-<img style="height: 300; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://docs.microsoft.com/en-us/sql/big-data-cluster/media/concept-data-pool/data-virtualization-improvements.png?view=sqlallproducts-allversions">
-<br>
-
 These components are used in the Data Pool of the SQL Server Big Data Cluster:
 
 <table style="tr:nth-child(even) {background-color: #f2f2f2;}; text-align: left; display: table; border-collapse: collapse; border-spacing: 5px; border-color: gray;">

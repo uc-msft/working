@@ -114,18 +114,18 @@ With this background, you can find the <a href="https://docs.microsoft.com/en-us
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b><a name="aks">Activity: Install Class Environment on AKS</a></b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b><a name="aks">Activity: Check Class Environment on AKS</a></b></p>
 
-In this lab you will deploy a SQL Server 2019 Big Data Cluster to the Azure Kubernetes Service. You will need a client machine and a subscription to Microsoft Azure where you can create assets.
+In this lab you will check your deployment of a SQL Server 2019 Big Data Cluster on the Azure Kubernetes Service. 
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
 
-Using the following steps, you will create a Resource Group in Azure that will hold your BDC on AKS. When you complete your lab you can delete this Resource Group which will stop the Azure charges for this course. 
+Using the following steps, you will evaluate your Resource Group in Azure that holds your BDC on AKS that you deployed earlier. When you complete your course you can delete this Resource Group which will stop the Azure charges for this course. 
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="00%20-%20Pre-Requisites.md" target="_blank">Ensure that you have completed all Pre-Requisites</a>.</p>
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/quickstart-big-data-cluster-deploy?view=sqlallproducts-allversions" target="_blank">Read the following article, ensuring that you carefully follow each step</a>. Stop at the section marked <b>Connect to the cluster</b>.</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="00%20-%20Pre-Requisites.md" target="_blank">Log in the to Azure Portal</a>.</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes" target="_blank">Log in to the Azure Portal, and locate the Resource Groups deployed for the AKS cluster</a>. How mamy do you find? What do you think their purposes are?</p>
  
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
