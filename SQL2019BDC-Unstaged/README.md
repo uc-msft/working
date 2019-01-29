@@ -49,14 +49,14 @@ In this workshop you'll learn:
 - Monitoring and managing SQL Server Big Data Clusters
 - Security considerations for SQL Server Big Data Clusters
 
-Starting in SQL Server 2019, Big Data Clusters allows for large-scale, near real-time processing of data over the HDFS file system and other data sources. It also leverages the Apache Spark framework which is integrated into one environment for management, monitoring and security of your environment. This means that organizations can implement everything from queries to analysis to Machine Learning and Artificial Intelligence within SQL Server, over large-scale, heterogeneous data. SQL Server Big Data Clusters can be implemented fully on-premises, in the cloud using a Kubernetes service such as Azure's AKS, and in a hybrid fashion. This allows for full, partial, and mixed security and control as desired.
+Starting in SQL Server 2019, Big Data Clusters allows for large-scale, near real-time processing of data over the HDFS file system and other data sources. It also leverages the Apache Spark framework which is integrated into one environment for management, monitoring, and security of your environment. This means that organizations can implement everything from queries to analysis to Machine Learning and Artificial Intelligence within SQL Server, over large-scale, heterogeneous data. SQL Server Big Data Clusters can be implemented fully on-premises, in the cloud using a Kubernetes service such as Azure's AKS, and in a hybrid fashion. This allows for full, partial, and mixed security and control as desired.
 
 The goal of this workshop is to train the team tasked with architecting and implementing SQL Server Big Data Clusters in the planning, creation, and delivery of a system designed to be used for large-scale data analytics. Since there are multiple technologies and concepts within this solution, the workshop uses multiple types of exercises to prepare the students for this implementation.
 
 The concepts and skills taught in this workshop form the starting points for:
 
-  * Data Professionals and DevOps teams that will implement and operate a SQL Server Big Data Cluster system.
-  * Solution Architects and Developers, to understand how to put together an end to end solution.
+  * Data Professionals and DevOps teams, to implement and operate a SQL Server Big Data Cluster system.
+  * Solution Architects and Developers, to understand how to put together an end-to-end solution.
   * Data Scientists, to understand the environment used to analyze and solve specific predictive problems.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
@@ -89,8 +89,8 @@ The solution includes the following technologies - although you are not limited 
   <tr><td>Azure Data Studio</td><td>Tooling for SQL Server, HDFS, Kubernetes cluster management, T-SQL, R, Python, and SparkML languages</td></tr>
   <tr><td>SQL Server Machine Learning Services</td><td>R, Python and Java extensions for SQL Server</td></tr>
   <tr><td>Microsoft Data Science Process (TDSP)</td><td>Project, Development, Control and Management framework</td></tr>
-  <tr><td><i>Monitoring and Management</i></td><td>Dashboards, logs, API's and other constructs to manage and monitor the solution<td><i></i></td></tr>
-  <tr><td><i>Security</i></td><td>RBAC, Keys, Secrets, VNETs and Compliance for the solution<td><i></i></td></tr>
+  <tr><td><i>Monitoring and Management</i></td><td>Dashboards, logs, API's and other constructs to manage and monitor the solution</td></tr>
+  <tr><td><i>Security</i></td><td>RBAC, Keys, Secrets, VNETs and Compliance for the solution</td></tr>
 
 </table>
 
@@ -102,11 +102,11 @@ You'll need a local system that you are able to install software on. The worksho
 
 You must have a Microsoft Azure account with the ability to create assets, specifically the Azure Container Service (AKS).
 
-This workshop expects that you understand data structures and working with SQL Server and computer networks. This workshop does not expect you to have any prior data science knowledge. For the Data Science content, basic knowledge of statistics and data science is helpful. Knowledge of SQL Server, Azure Data and AI services, Python, and Jupyter Notebooks is recommended. AI techniques are implemented in Python packages. Solution templates are implemented using Azure services, development tools, and SDKs. You should have a basic understanding of working with the Microsoft Azure Platform.
+This workshop expects that you understand data structures and working with SQL Server and computer networks. This workshop does not expect you to have any prior data science knowledge, but a basic knowledge of statistics and data science is helpful in the Data Science sections. Knowledge of SQL Server, Azure Data and AI services, Python, and Jupyter Notebooks is recommended. AI techniques are implemented in Python packages. Solution templates are implemented using Azure services, development tools, and SDKs. You should have a basic understanding of working with the Microsoft Azure Platform.
 
 If you are new to these, here are a few references you can complete prior to class:
 
--  [Microsoft SQL Server](https://docs.microsoft.com/en-us/sql/relational-databases/database-engine-tutorials?view=sql-server-2017)
+-  [Microsoft SQL Server](https://docs.microsoft.com/en-us/sql/relational-databases/database-engine-tutorials?view=sql-server-ver15)
 -  [Microsoft Azure](https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/)
 
 
