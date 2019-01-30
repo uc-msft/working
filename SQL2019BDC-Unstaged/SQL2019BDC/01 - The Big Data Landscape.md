@@ -94,7 +94,7 @@ This solution uses an example of a retail organization that has multiple data so
 
 <img style="height: 25;" src="../graphics/WWI-logo.png">
 
-<a href="https://azure-scenarios-experience.azurewebsites.net/big-data.html" target="_blank">Wide World Importers </a> (WWI) is a traditional brick and mortar business with a long track record of success, generating profits through strong retail store sales of their unique offering of affordable products from around the world. They have a great training program for new employees, that focuses on connecting with their customers and providing great face-to-face customer service. This strong focus on customer relationships has helped set WWI apart from their competitors. 
+<a href="https://azure-scenarios-experience.azurewebsites.net/big-data.html#the-wide-world-importers-sample-customer-scenario" target="_blank">Wide World Importers </a> (WWI) is a traditional brick and mortar business with a long track record of success, generating profits through strong retail store sales of their unique offering of affordable products from around the world. They have a great training program for new employees, that focuses on connecting with their customers and providing great face-to-face customer service. This strong focus on customer relationships has helped set WWI apart from their competitors. 
 
 WWI has now added web and mobile commerce to their platform, which has generated a significant amount of additional data, and data formats. These new platforms were added without integrating into the OLTP system data or Business Intelligence infrastructures. As a result, "silos" of data stores have developed.
 
@@ -214,7 +214,7 @@ The best way to learn an operating system is to install it and perform real-worl
 
   <tr><th style="background-color: #1b20a1; color: white;">Linux Concept</th> <th style="background-color: #1b20a1; color: white;">Description</th></tr>
 
-  <tr><td><b><a href="https://www.howtogeek.com/117579/htg-explains-how-software-installation-package-managers-work-on-linux/" target="_blank">Distributions</a></b></td><td>Windows is written and controlled by Microsoft. Linux is comprised only of a small Kernel, and then all other parts of the operating system are created by commercial or the public, and packaged up into a <i>Distribution</i>. These Distributions have all of the complementary functions to the operating system, and in some cases a graphical interface and other files. The Distributions supported by SQL Server are RedHat, Ubuntu, and SuSE.</td></tr>
+  <tr><td><b><a href="https://www.howtogeek.com/117579/htg-explains-how-software-installation-package-managers-work-on-linux/" target="_blank">Distributions</a></b></td><td>Unlike Windows, which is written and controlled by Microsoft, Linux is comprised only of a small Kernel, and then all other parts of the operating system are created by commercial entities or the public, and packaged up into a <i>Distribution</i>. These Distributions have all of the complementary functions to the operating system, and in some cases a graphical interface and other files. The Distributions supported by SQL Server are RedHat, Ubuntu, and SuSE.</td></tr>
   <tr><td><b><a href="https://www.howtogeek.com/117579/htg-explains-how-software-installation-package-managers-work-on-linux/" target="_blank">Package Managers</a></b></td><td>Software installation on Linux can be done manually by copying files or compiling source code. A Package Manager is a tool that simplifies this process, and is based on the Distribution. The two package managers you will see most often in SQL Server are <b>yum</b> and <b>apt</b>.</td></tr>
   <tr><td><b><a href="https://www.cardinalpath.com/forecasting-with-machine-learning-techniques/" target="_blank">File Systems</a></b></td><td>Like Windows, organized as a tree, but referenced by a forward-slash <b>/</b>. There are no drive letters in Linux - everything is "mounted" to what looks like a directory.</td></tr>
   <tr><td><b><a href="https://www.cardinalpath.com/forecasting-with-machine-learning-techniques/" target="_blank">Access and Authentication</a></b></td><td>Users and Groups are stored in protected files, called <b>/etc/passwd</b> and <b>/etc/group</b>. These files and locations may be augmented or slightly different based in the distribution. By default, each user has very low privileges and must be granted access to files or directories. The <b>sudo</b> command allows you to run as a privileged user (known as root) or as another user.</td></tr>
@@ -271,7 +271,11 @@ https://www.tutorialspoint.com/unix_terminal_online.php
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-4">1.4 Big Data Technologies: Containers and Controllers</a></h2>
 
-Bare-metal installations of an operating system such as Windows are deployed on hardware using a <i>Kernel</i>, and additional software to bring all of the hardware into a set of calls. One abstraction layer above installing software directly on hardware is using a <i>Hypervisor</i>. In essence, this layer uses the base operating system to emulate hardware. You install an operating system (called a *Guest* OS) on the Hypervisor (called the *Host*), and the Guest OS acts as if it is on bare-metal.
+Bare-metal installations of an operating system such as Windows are deployed on hardware using a <i>Kernel</i>, and additional software to bring all of the hardware into a set of calls. 
+
+<h3>Virtual machines</h3>
+
+One abstraction layer above installing software directly on hardware is using a <i>Hypervisor</i>. In essence, this layer uses the base operating system to emulate hardware. You install an operating system (called a *Guest* OS) on the Hypervisor (called the *Host*), and the Guest OS acts as if it is on bare-metal.
 
 <br>
 
