@@ -18,11 +18,11 @@ You'll cover the following topics in this Module:
 
   <dt><a href="#1-1">1.1 Business Applications and Big Data</a></dt>
   <dt><a href="#1-2">1.2 Workshop Scenario</a></dt>
-  <dt><a href="#1-3">1.3 Big Data Technologies: Operating Systems <i>(needs lab)</i></a></dt>
-  <dt><a href="#1-4">1.4 Big Data Technologies: Containers and Controllers <i>(needs lab)</i></a></dt>
-  <dt><a href="#1-5">1.5 Big Data Technologies: Distributed Data Storage <i>(needs lab)</i></a></dt>
-  <dt><a href="#1-6">1.6 Big Data Technologies: Command and Control <i>(needs lab)</i></a></dt>
-  <dt><a href="#1-7">1.7 Big Data Technologies: Data Ingestion, Processing and Output <i>(needs labs, For Further Study link scrub)</i></a></dt>
+  <dt><a href="#1-3">1.3 Big Data Technologies: Operating Systems</a></dt>
+  <dt><a href="#1-4">1.4 Big Data Technologies: Containers and Controllers</a></dt>
+  <dt><a href="#1-5">1.5 Big Data Technologies: Distributed Data Storage</a></dt>
+  <dt><a href="#1-6">1.6 Big Data Technologies: Command and Control</a></dt>
+  <dt><a href="#1-7">1.7 Big Data Technologies: Data Ingestion, Processing and Output</a></dt>
 
 </dl>
 
@@ -76,11 +76,9 @@ While solutions for large-scale data processing exist, they are often batch-base
 
 In this activity, you will define the use-case that best fits the industry where you work.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
-
 While you will review the design for a complete solution in this workshop, it extrapolates to many other scenarios. You need to find the top scenarios specific your industry.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+<b>Steps</b></p>
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Open a web browser and any professional notes or resources you use at work.</p>
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Spend 5 minutes looking online for the terms "Big Data" and "Machine Learning" and "Top" for your industry. For example:  <b>Hospital Big Data Machine Learning Top</b></p>
@@ -132,13 +130,11 @@ In the <i>04 - Operationalization</i> Module, you'll learn how the team solves e
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b><a name="aks">Activity: Install Class Environment on AKS</a></b></p>
 
-In this lab you will deploy a SQL Server 2019 Big Data Cluster to the Azure Kubernetes Service. You will need a client machine and a subscription to Microsoft Azure where you can create assets.
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+In this lab you will deploy a SQL Server 2019 Big Data Cluster to the Azure Kubernetes Service. You will need a client machine and a subscription to Microsoft Azure where you can create assets. This will take some time, so you'll do this now as you work through the next few modules, and then return to the installation process in a later module. 
 
 Using the following steps, you will create a Resource Group in Azure that will hold your BDC on AKS. When you complete your lab you can delete this Resource Group which will stop the Azure charges for this course. 
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+<p><b>Steps</b></p>
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="00%20-%20Pre-Requisites.md" target="_blank">Ensure that you have completed all Pre-Requisites</a>.</p>
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/quickstart-big-data-cluster-deploy?view=sqlallproducts-allversions" target="_blank">Read the following article, ensuring that you carefully follow each step</a>. Stop at the section marked <b>Connect to the cluster</b>.</p>
@@ -254,18 +250,17 @@ The essential commands you should know for this workshop are below. In Linux you
 
 A <a href="https://opensourceforu.com/2016/07/introduction-linux-system-administration/" target="_blank">longer explanation of system administration for Linux is here</a>.
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Work with Linux Commands</b></p>
 
-TODO: Activity Description and tasks
+<p><b>Steps</b></p>
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
-
-TODO: Enter activity description with checkbox
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-https://www.tutorialspoint.com/unix_terminal_online.php
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg" target="_blank">Open this link to run a Linux Emulator in a browser</a></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Find the mounted file systems. (hint: mount command)</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Show the current directory.</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Show the files in the current directory. </p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Create a new directory, navigate to it, and create a file called `test.txt` with the words `This is a test` in it. (hint: us the `vi` editor or the `echo` command)</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Display the contents of that file.</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Show the help for the `cat` command.</p>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
@@ -278,9 +273,7 @@ Bare-metal installations of an operating system such as Windows are deployed on 
 One abstraction layer above installing software directly on hardware is using a <i>Hypervisor</i>. In essence, this layer uses the base operating system to emulate hardware. You install an operating system (called a *Guest* OS) on the Hypervisor (called the *Host*), and the Guest OS acts as if it is on bare-metal.
 
 <br>
-
 <img style="height: 300;" src="https://docs.docker.com/images/VM%402x.png">
-
 <br>
 
 In this abstraction level, you have full control (and responsibility) for the entire operating system, but not the hardware. This isolates all process space and provides an entire "Virtual Machine" to applications. For scale-out systems, a Virtual Machine allows for a distribution and control of complete computer environments using only software.
@@ -294,9 +287,7 @@ A Docker Container is provided by the Docker runtime engine, which sits above th
 <i>(NOTE: The Container Image Kernel can run on Windows or Linux, but you will focus on the Linux Kernel Containers in this workshop.)</i>
 
 <br>
-
 <img style="height: 300;" src="https://docs.docker.com/images/Container%402x.png"> 
-
 <br>
 
 This abstraction holds everything for an application to isolate it from other running processes. It is also completely portable - you can create an image on one system, and another system can run it so long as the Docker Runtime is installed. Containers also start very quickly, are easy to create (called <i>Composing</i>) using a simple text file with instructions of what to install on the image. The instructions pull the base Kernel, and then any binaries you want to install. Several pre-built Containers are already available, SQL Server is one of these. <a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017" target="_blank">You can read more about installing SQL Server on Docker here</a>.
@@ -325,22 +316,17 @@ In SQL Server Big Data Clusters, Kubernetes is responsible for the state of the 
 
 (You'll cover the storage aspects of Kubernetes clusters in a moment.)
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Familiarize Yourself with Kubernetes using minikube</b></p>
 
-TODO: Activity Description and tasks
+To practice with Kubernetes, you will use an online emulator to work with the minikube platform. 
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+<p><b>Steps</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/ 
+" target="_blank">Open this resource, and complete the first module</a>. (You can return to it later to complete all exercises if you wish)</p>
 
-TODO: Enter activity description with checkbox
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-Kubernetes Training Sandbox: https://www.katacoda.com/workshops/kubernetes
-
-https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/ 
-
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-5">1.5 Big Data Technologies: Distributed Data Storage</a></h2>
 
@@ -356,21 +342,16 @@ To solve this, Docker implemented the concept of <a href="https://docs.docker.co
 
 You'll cover Volumes in more depth in a future module as you learn how the SQL Server BDC takes advantage of these constructs.
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Review HDFS Tutorial</b></p>
 
-TODO: Activity Description and tasks
+In large part, you will not have to work with HDFS directly in the SQL Server Big Data Cluster. However, it is a key concept to understand. In this review exercise, you will see a set of tutorials on how HDFS works in greater depth.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+<p><b>Steps</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://data-flair.training/blogs/hadoop-hdfs-tutorial/" target="_blank">Open this reference, and review the lessons you see there</a>. Bookmark this reference for later review.</p>
 
-TODO: Enter activity description with checkbox
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
-https://hortonworks.com/blog/install-hadoop-windows-hortonworks-data-platform-2-0/ 
-
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-6">1.6 Big Data Technologies: Command and Control</a></h2>
 
@@ -433,13 +414,14 @@ You can <a href="https://docs.microsoft.com/en-us/sql/azure-data-studio/what-is?
 You'll explore further operations with the Azure Data Studio in the <i>Operationalization</i> module.
 
 <br>
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Practice with Notebooks</b></p>
 
-TODO: Activity Description and tasks
+<p><b>Steps</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://notebooks.azure.com/BuckWoodyNoteBooks/projects/AzureNotebooks" target="_blank">Open this reference, and review the instructions you see there</a>. You can clone this Notebook to work with it later.</p>
 
-https://notebooks.azure.com/BuckWoodyNoteBooks/projects/AzureNotebooks 
-
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="1-7">1.7 Big Data Technologies: Data Ingestion, Processing and Output</a></h2>
 
@@ -505,38 +487,19 @@ While Spark is used for all phases of the data processing lifecycle and can comp
 <a href="https://databricks.com/blog/2016/01/04/introducing-apache-spark-datasets.html" target="_blank">You can learn more about these data representations here</a>. You'll see an example of ingesting data using Apache Spark in the <i>Operationalization</i> module.
 
 <br>
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
-
-TODO: Activity Description and tasks
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
-
-TODO: Enter activity description with checkbox
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 <br>
 
 <ul>
+    <li><a href = "https://docs.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-2017" target="_blank">Official Documentation for this section - Wide World Importers Data Dictionary and company description</a></li>
     <li><a href = "https://www.simplilearn.com/data-science-vs-big-data-vs-data-analytics-article" target="_blank">Understanding the Big Data Landscape</a></li>
-    <li><a href = "https://docs.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-2017" target="_blank">Wide World Importers Data Dictionary and company description</a></li>
     <li><a href = "http://www.admin-magazine.com/Articles/Linux-Essentials-for-Windows-Admins-Part-1" target="_blank">Linux for the Windows Admin</a></li>
     <li><a href = "file:///home/buck/Documents/windows/Users/bwoody/OneDrive%20-%20Microsoft/workshops/Unstaged/SQL2019BDC-Unstaged/SQL2019BDC/01%20-%20The%20Big%20Data%20Landscape.md" target="_blank">Docker Guide</a></li>
-    <li><a href = "." target="_blank">Kubernetes</a></li>
-    <li><a href = "." target="_blank">HDFS</a></li>
-    <li><a href = "." target="_blank">Azure Data Studio</a></li>
-    <li><a href = "." target="_blank">Kubernetes Security</a></li>
-    <li><a href = "." target="_blank">Data Ingestion into Azure Storage</a></li>
-
+    <li><a href = "https://www.kdnuggets.com/2019/01/practical-apache-spark-10-minutes.html" target="_blank">Working with Spark</a></li>
 </ul>
-
-https://www.kdnuggets.com/2019/01/practical-apache-spark-10-minutes.html 
-
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/geopin.png"><b >Next Steps</b></p>
 

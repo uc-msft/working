@@ -67,7 +67,6 @@ When you access that site, put the words **Purpose: SQL Bits 2019 Workshop** in 
 
 You will use these credentials in a subsequent step. It can take up to a week to receive your code. 
 
-
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 3: Prepare Your Workstation</b></p>
 <br>
 The instructions that follow are the same for either a "base metal" workstation or laptop, or a Virtual Machine. It's best to have at least 4MB or RAM on the management system, and these instructions assume that you are not planning to run the database server or any Containers on the workstation. It's also assumed that you are using a current version of Windows, either desktop or server.
@@ -118,8 +117,7 @@ write-host "Install Azure CLI"
 start "https://aka.ms/installazurecliwindows"
 </pre>
 
-You'll need to click the MSI file once it downloads, take all defaults. 
-
+You'll need to click the MSI file once it downloads, and take all defaults. 
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 4: Install Python 3 and git</b></p>
 
@@ -149,7 +147,7 @@ the `mssqlctl` program then deploys the SQL Server Big Data Cluster environment 
 <pre>
 write-host "Install mssqlctl"
 C:\python37\python.exe -m pip install --upgrade pip
-C:\Python37\Scripts\pip3 install --extra-index-url https://private-repo.microsoft.com/python/ctp-2.1 mssqlctl 
+C:\Python37\Scripts\pip3 install --extra-index-url https://private-repo.microsoft.com/python/ctp-2.2 mssqlctl 
 </pre>
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 8: Install Azure Data Studio and Extensions</b></p>
