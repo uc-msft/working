@@ -15,10 +15,10 @@ You'll cover the following topics in this Module:
 
 <dl>
 
-  <dt><a href="#5-0">5.0 Managing and Monitoring Your Solution <i>(needs labs)</i></a></dt>
-  <dt><a href="#5-1">5.1 Using kubectl commands <i>(needs labs)</i></a></dt>
-  <dt><a href="#5-2">5.2 Using mssqlctl commands <i>(needs labs)</i></a></dt>
-  <dt><a href="#5-3">5.3 Using the Big Data Cluster Portal <i>(needs labs)</i></a></dt>
+  <dt><a href="#5-0">5.0 Managing and Monitoring Your Solution</a></dt>
+  <dt><a href="#5-1">5.1 Using kubectl commands</a></dt>
+  <dt><a href="#5-2">5.2 Using mssqlctl commands</a></dt>
+  <dt><a href="#5-3">5.3 Using the Big Data Cluster Portal</a></dt>
 
 </dl>
 
@@ -66,17 +66,19 @@ Use this resource<a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/
 
 A <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank">full list of the **kubectl** commands is here</a>. 
 
-
+<br>
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Discover the IP Address of the BDC Master Installation, and Connect to it with Azure Data Studio</b></p>
+<br>
 
-Get the IP Address of the Master Instance in your Cluster, and connect with Azure Data Studio.
+In this activity, you will Get the IP Address of the Master Instance in your Cluster, and connect with Azure Data Studio.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+<b>Steps</b>
 
-<a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/connect-to-big-data-cluster?view=sqlallproducts-allversions" target="_blank">Open this resource</a>, and follow the steps there for the <b>AKS deployments:</b> section. 
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/connect-to-big-data-cluster?view=sqlallproducts-allversions" target="_blank">Open this resource</a>, and follow the steps there for the <b>AKS deployments:</b> section.</p>
 
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
-
+<br>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="5-2">5.2 Using mssqlctl commands</a></h2>
 
@@ -91,20 +93,11 @@ You can find a list of the switches and commands by typing:
 mssqlctl --h
 </pre> 
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+You used the mssqlctl commands to deploy your cluster. 
 
-TODO: Activity Description and tasks
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
-
-TODO: Enter activity description with checkbox
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
-
+<br>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="5-3">5.3 Using the Big Data Cluster Portal</a></h2>
 

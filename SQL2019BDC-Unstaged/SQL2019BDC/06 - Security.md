@@ -16,9 +16,9 @@ You'll cover the following topics in this Module:
 
 <dl>
 
-  <dt><a href="#6-0">6.0 Managing SQL Server Big Data Cluster Security <i>(needs labs)</i></a></dt>
-  <dt><a href="#6-1">6.1 Access <i>(needs labs)</i></a></dt>
-  <dt><a href="#6-2">6.2 Authentication and Autorization <i>(needs labs)</i></a></dt>
+  <dt><a href="#6-0">6.0 Managing SQL Server Big Data Cluster Security</a></dt>
+  <dt><a href="#6-1">6.1 Access</a></dt>
+  <dt><a href="#6-2">6.2 Authentication and Authorization</a></dt>
 
 </dl>
 
@@ -50,20 +50,8 @@ You can see these endpoints in this diagram:
 <img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://docs.microsoft.com/en-us/sql/big-data-cluster/media/concept-security/cluster_endpoints.png">
 <br>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
-
-TODO: Activity Description and tasks
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
-
-TODO: Enter activity description with checkbox
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
 <p style="border-bottom: 1px solid lightgrey;"></p>
-
+<br>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="6-2">6.2 Authentication and Authorization</a></h2>
 
@@ -91,19 +79,19 @@ A special SQL login is created in the Controller SQL instance that is system man
 
 For Intra-cluster communication with non-SQL services within the big data cluster, such as Livy to Spark or Spark to the storage pool, security uses certificates. All SQL Server to SQL Server communication is secured using SQL logins.
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+<br>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Review Security Endpoints</b></p>
+<br>
 
-TODO: Activity Description and tasks
+In this activity, you will review the endpoints exposed on the cluster.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+<b>Steps</b>
 
-TODO: Enter activity description with checkbox
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="href" target="_blank">Open this reference, and follow the instructions you see for the <b>Service Endpoints</b> section</a>. This shows the addresses and ports exposed to the end-users.</p>
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 <ul>

@@ -144,10 +144,18 @@ choco install kubernetes-cli
 
 the `mssqlctl` program then deploys the SQL Server Big Data Cluster environment onto Kubernetes. 
 
+<i>Note - you must delete the old version before the class. It is updated quite frequently during the preview phase.</i>
+
 <pre>
-write-host "Install mssqlctl"
-C:\python37\python.exe -m pip install --upgrade pip
-C:\Python37\Scripts\pip3 install --extra-index-url https://private-repo.microsoft.com/python/ctp-2.2 mssqlctl 
+setx path "%path%;C:\Users\<replace with your login name>\AppData\Roaming\Python\Python37\Scripts"
+
+choco upgrade kubernetes-cli
+
+python -m pip install --upgrade pip
+
+pip uninstall mssqlctl
+
+pip install --extra-index-url https://private-repo.microsoft.com/python/ctp-2.2 mssqlctl
 </pre>
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity 8: Install Azure Data Studio and Extensions</b></p>

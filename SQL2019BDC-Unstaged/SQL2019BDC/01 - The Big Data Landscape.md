@@ -499,6 +499,7 @@ While Spark is used for all phases of the data processing lifecycle and can comp
     <li><a href = "http://www.admin-magazine.com/Articles/Linux-Essentials-for-Windows-Admins-Part-1" target="_blank">Linux for the Windows Admin</a></li>
     <li><a href = "file:///home/buck/Documents/windows/Users/bwoody/OneDrive%20-%20Microsoft/workshops/Unstaged/SQL2019BDC-Unstaged/SQL2019BDC/01%20-%20The%20Big%20Data%20Landscape.md" target="_blank">Docker Guide</a></li>
     <li><a href = "https://www.kdnuggets.com/2019/01/practical-apache-spark-10-minutes.html" target="_blank">Working with Spark</a></li>
+    <li><a href="https://realpython.com/jupyter-notebook-introduction/" target="_blank">Full tutorial on Jupyter Notebooks</a></li>
 </ul>
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/geopin.png"><b >Next Steps</b></p>

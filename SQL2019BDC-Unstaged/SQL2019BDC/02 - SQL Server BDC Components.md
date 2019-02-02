@@ -16,9 +16,9 @@ You'll cover the following topics in this Module:
 
 <dl>
 
-  <dt><a href="#2-0">2.0 SQL Server Big Data Capabilities<i>(needs updated graphics, needs labs)</i></a></dt>
-  <dt><a href="#2-1">2.1 Data Virtualization <i>(needs updated graphics, needs labs)</i></a></dt>
-  <dt><a href="#2-2">2.2 SQL Server 2019 Big Data Cluster Components - Data Virtualization, Data Marts and Data Lakes<i> (needs updated graphics, needs labs)</i></a></dt>
+  <dt><a href="#2-0">2.0 SQL Server Big Data Capabilities</a></dt>
+  <dt><a href="#2-1">2.1 Data Virtualization</a></dt>
+  <dt><a href="#2-2">2.2 SQL Server 2019 Big Data Cluster Components - Data Virtualization, Data Marts and Data Lakes</a></dt>
 
 </dl>
 
@@ -44,7 +44,7 @@ In both a Stand-Alone Instance configuration and within the SQL Server Big Data 
 
 To leverage PolyBase, you first define the external table using a specific set of statements, then configure the connection and security, and then use standard Transact-SQL statements work with the data as if it were an standard SQL Server table. The components used in this configuration are as Follows:
 
-Components used in Data Virtualization:
+<b>Components used in Data Virtualization</b>
 
 <table style="tr:nth-child(even) {background-color: #f2f2f2;}; text-align: left; display: table; border-collapse: collapse; border-spacing: 5px; border-color: gray;">
 
@@ -54,26 +54,23 @@ Components used in Data Virtualization:
 </table>
 
 <br>
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Review PolyBase Solution</b></p>
 
-TODO: Activity Description and tasks
+In this section you will review the solution tutorial you will perform in the <i>04 Operationalization</i> Module. You'll see how to create a reference to an HDFS file store and query it within SQL Server as if it were a standard internal table.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+<br>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Open <a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/tutorial-query-hdfs-storage-pool?view=sqlallproducts-allversions" target="_blank">this reference and locate numbers 4-5 of the steps in the tutorial</a>. This explains the two steps required to create and query an External table. </p>
 
-TODO: Enter activity description with checkbox
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <h2><a name="2-2">2.2 SQL Server 2019 Big Data Cluster Components</a></h2>
 
 The Big Data capapbilities for SQL Server can be used in a stand-alone Instance by leveraging the Data Virtualization feature described above. To perform scale-out Big Data, SQL Server implments a Big Data Cluster by leveraging Kubernetes with several other components. 
 
 <br>
-<img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/sqlbdc.png">
+<img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/bdc.png">
 <br>
 
 SQL Server Big Data Clusters can be installed in three ways:
@@ -82,7 +79,7 @@ SQL Server Big Data Clusters can be installed in three ways:
  - In a Cloud Service
  - On premises
 
-These architectures are not mutually exclusive - you can install some components on-premises, and others as a service. Your connections can interconnect across these environments. You'll explore more about installing SQL Server BDC in the <i>Planning, Installation and Configuration</i> module.
+These architectures are not mutually exclusive - you can install some components on-premises, and others as a service. Your connections can interconnect across these environments. You'll explore more about installing SQL Server BDC in the <i>03 Planning, Installation and Configuration</i> module.
 
 <h3>Control Plane: Kubernetes Components</h3>
 
@@ -201,23 +198,16 @@ These components are used in the Storage Pool of the SQL Server Big Data Cluster
 </table>
 
 <br>
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Review Data Pool Solution</b></p>
 
-TODO: Activity Description and tasks
+In this section you will review the solution tutorial you will perform in the <i>04 Operationalization</i> Module. You'll see how to load data into the Data Pool.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+<br>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png">Open <a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/tutorial-data-pool-ingest-sql?view=sqlallproducts-allversions" target="_blank">this reference and review the steps in the tutorial</a>. This explains the two steps required to create and load an External table in the Data Pool. </p>
 
-TODO: Enter activity description with checkbox
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
-
-
-<p style="border-bottom: 1px solid lightgrey;"></p>
-
+<br>
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 <ul>
@@ -228,7 +218,6 @@ TODO: Enter activity steps description with checkbox
 		<li><a href = "http://download.microsoft.com/download/8/B/6/8B643729-6224-4ECC-8C50-3292B8156F0E/SQL_Server_2019_Transform-Data_into_Insights_Infographic_EN_US.pdf" target="_blank">Infographic on Big Data</a></li>
 		<li><a href = "https://docs.microsoft.com/en-us//sql/big-data-cluster/big-data-cluster-overview?view=sqlallproducts-allversions" target="_blank">Books Online on this topic</a></li>
 		<li><a href = "https://www.dataonstorage.com/resource/video/msignite2018/brk4021-deep-dive-on-sql-server-and-big-data/" target="_blank">Session on Big Data at at Ignite</a></li> 
-    <li><a href = "https://www.youtube.com/watch?v=gyiIB_6wfcI" target="_blank">Session on Containers at Ignite - Inside SQL Server containers - BRK4017</a></li> 
 </ul>
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/geopin.png"><b >Next Steps</b></p>

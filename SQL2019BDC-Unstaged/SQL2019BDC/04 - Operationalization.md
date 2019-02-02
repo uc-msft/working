@@ -15,15 +15,15 @@ In this workshop you'll cover using a Process and and various Platform component
 You'll cover the following topics in this Module:
 
 <dl>
-
   <dt><a href="#4-0">4.0 End-To-End Solution for Big Data Clusters</a></dt>
-  <dt><a href="#4-1">4.1 Data Virtualization <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
-  <dt><a href="#4-2">4.2 Creating a Data Mart using Big Data Cluster <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
-  <dt><a href="#4-3">4.3 Querying HDFS Data using Big Data Cluster <i>(Stubbed, needs content, needs updated graphics, needs labs)</i></a></dt>
-
+  <dt><a href="#4-1">4.1 Data Virtualization</a></dt>
+  <dt><a href="#4-2">4.2 Creating a Data Mart using Big Data Clusters</a></dt>
+  <dt><a href="#4-3">4.3 Querying HDFS Data using Big Data Clusters</a></dt>
 </dl>
 
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="4-0">4.0 End-To-End Solution for Big Data Clusters</a></h2>
 
@@ -42,21 +42,28 @@ WWI has now added web and mobile commerce to their platform, which has generated
 This presented the following four challenges - the IT team at WWI needs to:
 
  - Scale data systems to reach more consumers
+
  - Unlock business insights from multiple sources of structured and unstructured data
+
  - Apply deep analytics with high-performance responses
+
  - Enable AI into apps to actively engage with customers
 
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <h3>Solution - <i>Challenge 1: Scale Data System</i></h3>
 
 To meet these challenges, the following solution is proposed. Using the SQL Server 2019 Big Data Cluster platform you learned about in the <i>02 - SQL Server BDC Components</i> Module, the solution allows the company to keep it's current codebase, while enabling a flexible scale-out architecture. This answers the first challenge of working with a scale-out system for larger data environments.
 
-The following diagram illustrates the complete solution, and the sections that follow will cover the additional challenge solutions.
+The following diagram illustrates the complete solution that you can use to brief your audience with: 
 
 <br>
 <img style="height: 400; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/bdcsolution1.png">
 <br>
+
+In the following sections you'll dive deeper into how this scale is used to solve the rest of the challenges.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
@@ -72,19 +79,19 @@ Using the Data Virtualization capability you saw in the <i>02 - SQL Server BDC C
 
 This process allows not only a query to disparate systems, but also those remote systems can hold extremely large sets of data. Normally you are querying a subset of that data, so the results are all that are sent back over the network. These results can be joined with internal tables for a single view, and all from within the same Transact-SQL statements. 
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Load and query data in an External Table</b></p>
 
-TODO: Activity Description and tasks
+In this activity, you will load the sample data into your Big Data Cluster environment, and then create and use an External table to query the data in HDFS. This process is similar to connecting to any Polybase target.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+<b>Steps</b>
 
-TODO: Enter activity description with checkbox
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/tutorial-load-sample-data?view=sqlallproducts-allversions" target="_blank">Open this reference, and perform all of the instructions you see there</a>. This loads your data in preparattion for the next Activity.</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/tutorial-query-hdfs-storage-pool?view=sqlallproducts-allversions" target="_blank">Open this reference, and perform all of the instructions you see there</a>. This step shows you how to create and query an External table.</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/tutorial-query-oracle?view=sqlallproducts-allversions" target="_blank">Open this reference, and review the instructions you see there</a>. (You will not have to perform these steps, unless you wish to set up an Oracle server that your BDC can reach)</p>
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="4-2">4.2 Creating a Data Mart using Big Data Cluster - <i>Challenge 3: Deep Analytics</i></a></h2>
 
@@ -96,19 +103,16 @@ Ad-hoc queries are very useful for many scenarios. There are times when you woul
 
 Using the Data Virtualization capability you saw in the <i>02 - SQL Server BDC Components</i> Module, the IT team creates External Tables using PolyBase statements. These External Table definitions are stored in the database on the SQL Server Master Instance within the cluster. When queried by the user, the queries are engaged from the SQL Server Master Instance through the Compute Pool in the SQL Server BDC, which holds Kubernetes Nodes containing the Pods running SQL Server Instances. These Instances send the query to the PolyBase Connector at the target data system, which processes the query based on the type of target system. The results are processed and returned through the PolyBase Connector to the Compute Pool and then on to the Master Instance, and the PolyBase statements can specify the target of the Data Pool. The SQL Server Instances in the Data Pool store the data in a distributed fashion across multiple databases, called <i>Shards</i>.
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Load and query data into the Data Pool</b></p>
 
-TODO: Activity Description and tasks
+In this activity, you will load the sample data into your Big Data Cluster environment, and then create and use an External table to load data into the Data Pool.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+<b>Steps</b>
 
-TODO: Enter activity description with checkbox
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/tutorial-data-pool-ingest-sql?view=sqlallproducts-allversions" target="_blank">Open this reference, and perform the instructions you see there</a>. This loads data into the Data Pool.</p>
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"><a name="4-3">4.3 Querying HDFS Data using Big Data Cluster - <i>Challenge 4: Enable AI</i></a></h2>
 
@@ -122,21 +126,21 @@ The SQL Server Master Instance in the BDC installs with <a href="https://docs.mi
 
 The Data Scientist has another option to create and train ML and AI models. The Spark platform within the Storage Pool is accessible through the Knox gateway, using Livy to send Spark Jobs as you learned about in the <i>02 - SQL Server BDC Components</i> Module. This gives access to the full Spark platform, using Jupyter Notebooks (included in <i>Azure Data Studio</i>) or any other standard tools that can access Spark through REST calls. 
 
+
 <br>
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: TODO: Activity Name</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Load data with Spark, run a Spark Notebook</b></p>
 <br>
 
-TODO: Activity Description and tasks
+In this activity, you will load the sample data into your Big Data Cluster environment using Spark, and use a Notebook in Azure Data Studio to work with it.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+<b>Steps</b>
 
-TODO: Enter activity description with checkbox
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/tutorial-data-pool-ingest-spark?view=sqlallproducts-allversions" target="_blank">Open this reference, and follow the instructions you see there</a>. This loads the data in preparation for the Notebook operations.</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"><a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/tutorial-notebook-spark?view=sqlallproducts-allversions" target="_blank">Open this reference, and follow the instructions you see there</a>. This simple example shows you how to work with the data you ingested into the Storage Pool using Spark.</p>
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-TODO: Enter activity steps description with checkbox
-
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 <ul>

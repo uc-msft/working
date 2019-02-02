@@ -38,13 +38,17 @@ Since the Kubernetes Cluster is often made up of Virtual Machines that host the 
 
 You can deploy Kubernetes in three general ways:
  - In a Cloud Platform such as Azure Kubernetes Service (AKS)
+
  - In your own Kubernetes deployment using KubeADM
+
  - In your own Kubernetes deployment using minikube (*to be used only for training and testing*)
 
 Regardless of the Kubernetes target, the general steps for setting up the system are:
 
  - Set up Kubernetes cluster
+
  - Install the cluster configuration tool mssqlctl on the administration machine
+
  - Deploy the SQL Server big data cluster on the Kubernetes cluster
 
 In the sections that follow, you'll cover the general process for each of these deployments. The official documentation referenced above have the specific steps for each deployment, and the Activity section of this Module has the steps for deploying the BDC on AKS for the classroom enviornment.
@@ -63,16 +67,21 @@ An AKS cluster is divided into two components: The *Cluster master nodes* which 
 
 The cluster master includes the following core Kubernetes components:
 
-- kube-apiserver - The API server is how the underlying Kubernetes APIs are exposed. This component provides the interaction for management tools, such as kubectl or the Kubernetes dashboard.
-- etcd - To maintain the state of your Kubernetes cluster and configuration, the highly available etcd is a key value store within Kubernetes.
-- kube-scheduler - When you create or scale applications, the Scheduler determines what nodes can run the workload and starts them.
-- kube-controller-manager - The Controller Manager oversees a number of smaller Controllers that perform actions such as replicating pods and handling node operations.
+ - *kube-apiserver* - The API server is how the underlying Kubernetes APIs are exposed. This component provides the interaction for management tools, such as kubectl or the Kubernetes dashboard.
+
+ - *etcd* - To maintain the state of your Kubernetes cluster and configuration, the highly available etcd is a key value store within Kubernetes.
+
+ - *kube-scheduler* - When you create or scale applications, the Scheduler determines what nodes can run the workload and starts them.
+
+ - *kube-controller-manager* - The Controller Manager oversees a number of smaller Controllers that perform actions such as replicating pods and handling node operations.
 
 The Nodes include the following components: 
 
- - The kubelet is the Kubernetes agent that processes the orchestration requests from the cluster master and scheduling of running the requested containers.
- - Virtual networking is handled by the kube-proxy on each node. The proxy routes network traffic and manages IP addressing for services and pods.
- - The container runtime is the component that allows containerized applications to run and interact with additional resources such as the virtual network and storage. In AKS, Docker is used as the container runtime.
+ - The *kubelet* is the Kubernetes agent that processes the orchestration requests from the cluster master and scheduling of running the requested containers.
+
+ - Virtual networking is handled by the *kube-proxy* on each node. The proxy routes network traffic and manages IP addressing for services and pods.
+
+ - The *container runtime* is the component that allows containerized applications to run and interact with additional resources such as the virtual network and storage. In AKS, Docker is used as the container runtime.
 
 <br>
 <img style="height: 100; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="../graphics/aks2.png">
@@ -116,24 +125,21 @@ With this background, you can find the <a href="https://docs.microsoft.com/en-us
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b><a name="aks">Activity: Check Class Environment on AKS</a></b></p>
 
-In this lab you will check your deployment of a SQL Server 2019 Big Data Cluster on the Azure Kubernetes Service. 
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Description</b></p>
+In this lab you will check your deployment you performed in Module 01 of a SQL Server 2019 Big Data Cluster on the Azure Kubernetes Service. 
 
 Using the following steps, you will evaluate your Resource Group in Azure that holds your BDC on AKS that you deployed earlier. When you complete your course you can delete this Resource Group which will stop the Azure charges for this course. 
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+<b>Steps</b>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="00%20-%20Pre-Requisites.md" target="_blank">Log in the to Azure Portal</a>.</p>
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes" target="_blank">Log in to the Azure Portal, and locate the Resource Groups deployed for the AKS cluster</a>. How mamy do you find? What do you think their purposes are?</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/checkbox.png"> <a href="https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes" target="_blank">Log in to the Azure Portal, and locate the <i>Resource Groups</i> deployed for the AKS cluster</a>. How many do you find? What do you think their purposes are?</p>
  
-
+<br>
 <p style="border-bottom: 1px solid lightgrey;"></p>
+<br>
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 <ul>
     <li><a href="https://docs.microsoft.com/en-us/sql/big-data-cluster/deployment-guidance?view=sqlallproducts-allversions" target="_blank">Official Documentation for this section</a></li>
-		○ Deployment tutorial
 </ul>
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/geopin.png"><b >Next Steps</b></p>
