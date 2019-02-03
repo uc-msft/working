@@ -80,7 +80,7 @@ The solution includes the following technologies - although you are not limited 
   <tr><td><i>Docker</i></td><td>Encapsulation level for the SQL Server Big Data Cluster architecture</td></tr>
   <tr><td><i>Kubernetes</i></td><td>Management, control plane for Containers</td></tr>
   <tr><td>Microsoft Azure</td><td>Cloud environment for services</td></tr>
-  <tr><td>Azure Container Service (AKS)</td><td>Kubernetes as a Service</td></tr>
+  <tr><td>Azure Kubernetes Service (AKS)</td><td>Kubernetes as a Service</td></tr>
   <tr><td><i>Apache HDFS</i></td><td>Scale-out storage subsystem</td></tr>
   <tr><td><i>Apache Knox</i></td><td>The Knox Gateway provides a single access point for all REST interactions, used for security</td></tr>
   <tr><td><i>Apache Livy</i></td><td>Tob submission system for Apache Spark</td></tr>
@@ -100,7 +100,7 @@ The solution includes the following technologies - although you are not limited 
 
 You'll need a local system that you are able to install software on. The workshop demonstrations use Microsoft Windows as an operating system and all examples use Windows for the workshop. Optionally, you can use a Microsoft Azure Virtual Machine (VM) to install the software on and work with the solution.
 
-You must have a Microsoft Azure account with the ability to create assets, specifically the Azure Container Service (AKS).
+You must have a Microsoft Azure account with the ability to create assets, specifically the Azure Kubernetes Service (AKS).
 
 This workshop expects that you understand data structures and working with SQL Server and computer networks. This workshop does not expect you to have any prior data science knowledge, but a basic knowledge of statistics and data science is helpful in the Data Science sections. Knowledge of SQL Server, Azure Data and AI services, Python, and Jupyter Notebooks is recommended. AI techniques are implemented in Python packages. Solution templates are implemented using Azure services, development tools, and SDKs. You should have a basic understanding of working with the Microsoft Azure Platform.
 
